@@ -7,23 +7,23 @@
 
     
 
-    <title>android 打开其他应用 | Imtianx `s Blog</title>
+    <title>android 打开其他应用 | hequnsky `s Blog</title>
     <meta name="author" content="imtianx">
     
-    <meta name="description" content="在开发中，有时需要在自己的应用中打开其他应用，自己写了两个方法来获取手机上安装的所有应用。这里主要以打开支付宝为例。">
+    <meta name="description" content="hequnsky的个人技术博客">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:title" content="android 打开其他应用"/>
-    <meta property="og:site_name" content="Imtianx `s Blog"/>
+    <meta property="og:site_name" content="hequnsky `s Blog"/>
 
     
     <meta property="og:image" content="undefined"/>
     
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Imtianx `s Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="hequnsky `s Blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/lib/materialize.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -44,7 +44,7 @@
             <i class="fa fa-navicon"></i>
         </a>
         <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Imtianx `s Blog</a>
+            <a href="/" class="brand-logo hide-on-med-and-down">hequnsky `s Blog</a>
             <ul class="right hide-on-med-and-down">
                 
                     <li>
@@ -172,7 +172,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/android/">
-                    android <span class="right">28 篇</span></a>
+                    android <span class="right">37 篇</span></a>
                 </a>
             </li>
 
@@ -180,7 +180,7 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/android/学习笔记/">
-                    学习笔记 <span class="right">24 篇</span></a>
+                    学习笔记 <span class="right">33 篇</span></a>
                 </a>
             </li>
 
@@ -211,6 +211,30 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/linux/">
+                    linux <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/域名配置/">
+                    域名配置 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/工具软件/">
                     工具软件 <span class="right">3 篇</span></a>
                 </a>
@@ -229,6 +253,38 @@
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/工具软件/PL-SQL/">
                     PL-SQL <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/java/">
+                    java <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/基础知识/">
+                    基础知识 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/高级知识/">
+                    高级知识 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/面试/">
+                    面试 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -286,7 +342,12 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-04-23T08:10:25.000Z"><a href="/2016/04/23/open-other-app/">2016-04-23</a></time>
+            <time class="pink-link-context" datetime="2016-04-23T16:10:25.000Z"><a href="/2016/04/23/open-other-app/">2016-04-23</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -304,11 +365,28 @@
 
 
             <div class="entry pink-link-context">
-                <p>在开发中，有时需要在自己的应用中打开其他应用，自己写了两个方法来获取手机上安装的所有应用。这里主要以打开支付宝为例。<a id="more"></a><br>（1）、获取手机上的所有应用，将其放在一个list中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">private List&lt;PackageInfo&gt; getAllApps() &#123;     </span><br><span class="line">	List&lt;PackageInfo&gt; apps = new ArrayList&lt;PackageInfo&gt;();     </span><br><span class="line">	PackageManager packageManager = this.getPackageManager();     </span><br><span class="line">	//获取手机内所有应用     </span><br><span class="line">	List&lt;PackageInfo&gt; paklist = packageManager.getInstalledPackages(0);     </span><br><span class="line">	for (int i = 0; i &lt; paklist.size(); i++) &#123;     </span><br><span class="line">		PackageInfo pak = (PackageInfo) paklist.get(i);     </span><br><span class="line">		//判断是否为非系统预装的应用  (大于0为系统预装应用，小于等于0为非系统应用)   </span><br><span class="line">		if ((pak.applicationInfo.flags &amp; pak.applicationInfo.FLAG_SYSTEM) &lt;= 0) &#123;     </span><br><span class="line">			apps.add(pak);     </span><br><span class="line">		&#125;     </span><br><span class="line">	&#125;     </span><br><span class="line">	return apps;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>（2）、打开指定的app(这里打开的是支付宝)。下面的方法是在知道支付宝app的包名的情况下进行判断的，通常情况下不知道包名，可以通过appLabel可以获取应用的名称，以此来匹配。在不存在的情况下，使用手机自带浏览器打开指定的网页。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">private static final String PAY_PACKAGE_NAME = &quot;com.eg.android.AlipayGphone&quot;;</span><br><span class="line">private static final String PAY_WEB_URL = &quot;https://auth.alipay.com/login/index.htm&quot;;</span><br><span class="line">	</span><br><span class="line">private void launchApp() &#123;   </span><br><span class="line">	PackageManager packageManager = this.getPackageManager();   </span><br><span class="line">	List&lt;PackageInfo&gt; packages = getAllApps();   </span><br><span class="line">	PackageInfo pa = null;   </span><br><span class="line">	for(int i=0;i&lt;packages.size();i++)&#123;   </span><br><span class="line">		pa = packages.get(i);   </span><br><span class="line">		//获得应用名   </span><br><span class="line">		String appLabel = packageManager.getApplicationLabel(pa.applicationInfo).toString();   </span><br><span class="line">		//获得包名   </span><br><span class="line">		String appPackage = pa.packageName; </span><br><span class="line">		Log.e(&quot;test&quot;, &quot;&quot;+i+&quot;----&quot;+appLabel+&quot;  &quot;+appPackage);   </span><br><span class="line">		</span><br><span class="line">		//安装支付宝，打开支付宝</span><br><span class="line">		if(appPackage.equals(PAY_PACKAGE_NAME))&#123;</span><br><span class="line">			mIntent = packageManager.getLaunchIntentForPackage(PAY_PACKAGE_NAME);</span><br><span class="line">			startActivity(mIntent); </span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">	//为安装支付宝，打开支付宝登陆的网页</span><br><span class="line">	mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(PAY_WEB_URL));</span><br><span class="line">	mIntent.setClassName(&quot;com.android.browser&quot;, &quot;com.android.browser.BrowserActivity&quot;);</span><br><span class="line">	startActivity(mIntent);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+                <p>在开发中，有时需要在自己的应用中打开其他应用，自己写了两个方法来获取手机上安装的所有应用。这里主要以打开支付宝为例。<a id="more"></a><br>（1）、获取手机上的所有应用，将其放在一个list中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">private List&lt;PackageInfo&gt; getAllApps() &#123;     </div><div class="line">	List&lt;PackageInfo&gt; apps = new ArrayList&lt;PackageInfo&gt;();     </div><div class="line">	PackageManager packageManager = this.getPackageManager();     </div><div class="line">	//获取手机内所有应用     </div><div class="line">	List&lt;PackageInfo&gt; paklist = packageManager.getInstalledPackages(0);     </div><div class="line">	for (int i = 0; i &lt; paklist.size(); i++) &#123;     </div><div class="line">		PackageInfo pak = (PackageInfo) paklist.get(i);     </div><div class="line">		//判断是否为非系统预装的应用  (大于0为系统预装应用，小于等于0为非系统应用)   </div><div class="line">		if ((pak.applicationInfo.flags &amp; pak.applicationInfo.FLAG_SYSTEM) &lt;= 0) &#123;     </div><div class="line">			apps.add(pak);     </div><div class="line">		&#125;     </div><div class="line">	&#125;     </div><div class="line">	return apps;     </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>（2）、打开指定的app(这里打开的是支付宝)。下面的方法是在知道支付宝app的包名的情况下进行判断的，通常情况下不知道包名，可以通过appLabel可以获取应用的名称，以此来匹配。在不存在的情况下，使用手机自带浏览器打开指定的网页。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">private static final String PAY_PACKAGE_NAME = &quot;com.eg.android.AlipayGphone&quot;;</div><div class="line">private static final String PAY_WEB_URL = &quot;https://auth.alipay.com/login/index.htm&quot;;</div><div class="line">	</div><div class="line">private void launchApp() &#123;   </div><div class="line">	PackageManager packageManager = this.getPackageManager();   </div><div class="line">	List&lt;PackageInfo&gt; packages = getAllApps();   </div><div class="line">	PackageInfo pa = null;   </div><div class="line">	for(int i=0;i&lt;packages.size();i++)&#123;   </div><div class="line">		pa = packages.get(i);   </div><div class="line">		//获得应用名   </div><div class="line">		String appLabel = packageManager.getApplicationLabel(pa.applicationInfo).toString();   </div><div class="line">		//获得包名   </div><div class="line">		String appPackage = pa.packageName; </div><div class="line">		Log.e(&quot;test&quot;, &quot;&quot;+i+&quot;----&quot;+appLabel+&quot;  &quot;+appPackage);   </div><div class="line">		</div><div class="line">		//安装支付宝，打开支付宝</div><div class="line">		if(appPackage.equals(PAY_PACKAGE_NAME))&#123;</div><div class="line">			mIntent = packageManager.getLaunchIntentForPackage(PAY_PACKAGE_NAME);</div><div class="line">			startActivity(mIntent); </div><div class="line">			return;</div><div class="line">		&#125;</div><div class="line">	&#125; </div><div class="line">	//为安装支付宝，打开支付宝登陆的网页</div><div class="line">	mIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(PAY_WEB_URL));</div><div class="line">	mIntent.setClassName(&quot;com.android.browser&quot;, &quot;com.android.browser.BrowserActivity&quot;);</div><div class="line">	startActivity(mIntent);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>最后，注意添加网络访问的权限。</p>
 
+                
+<p class="pink-link-context">
+    <a href="/2016/04/23/PhotoView_GifView/" rel="next" title="PhotoView与GifView的使用">
+    上一篇：PhotoView与GifView的使用
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2016/04/23/auto-filin-smscode/" rel="next" title="android自动获取短信验证码">
+    下一篇：android自动获取短信验证码
+  </a>
+</p>
+
+
             </div>
+			
         </div>
     </div>
 </article>
@@ -363,7 +441,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="social-group col m3 s12">
+            <div class="social-group col m4 s12">
                 <h5 class="white-text">社交</h5>
                 
                     <a class="social-link" href="https://github.com/imtianx" target="_blank">
@@ -374,26 +452,41 @@
                         <i class="fa fa-2x fa-weibo"></i>
                     </a>
                 
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
             </div>
             
 
             
-            <div class="col m9 s12">
+            <div class="col m8 s12">
                 <h5 class="white-text">友情链接</h5>
                 
                     <a class="social-link" href="http://androidweekly.cn/" target="_blank">android开发技术周报</a>
+                
+                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                
+                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
                 
                     <a class="social-link" href="http://androidcat.com/" target="_blank">androidcat</a>
                 
                     <a class="social-link" href="http://www.jianshu.com/" target="_blank">简书</a>
                 
-                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
-                
                     <a class="social-link" href="http://www.csdn.net/" target="_blank">CSDN</a>
                 
                     <a class="social-link" href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
                 
-                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                    <a class="social-link" href="http://t.cn/Rij9p4Y" target="_blank">翻墙SSBetter</a>
+                
+                    <a class="social-link" href="http://blog.kictto.tech/" target="_blank">Kictto</a>
                 
             </div>
             
@@ -403,7 +496,7 @@
 
     <div class="footer-copyright pink-link-context">
         <div class="container">
-            © 2016-2017  imtianx.cn, All rights reserved.
+            © 2016-2017  imtianx.cn,  鄂ICP备17001358号-1
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
@@ -422,6 +515,8 @@
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
 <script>
     (function($) {
@@ -463,6 +558,22 @@
 
             // 文章目录
             $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
             // 修正文章目录的left-border颜色
             var color = $('.table-of-contents-text').css('color');
             $('.table-of-contents-link').css('border-left-color', color);

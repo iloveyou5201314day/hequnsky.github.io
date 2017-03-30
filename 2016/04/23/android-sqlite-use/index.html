@@ -7,23 +7,23 @@
 
     
 
-    <title>SQLit相关类的介绍及使用 | Imtianx `s Blog</title>
+    <title>SQLit相关类的介绍及使用 | hequnsky `s Blog</title>
     <meta name="author" content="imtianx">
     
-    <meta name="description" content="本文主要介绍了SQLit中相关的几个类（SQLiteDatabase、ContentValues、SQLiteOpenHelper）中的常用的方法及其作用。">
+    <meta name="description" content="hequnsky的个人技术博客">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:title" content="SQLit相关类的介绍及使用"/>
-    <meta property="og:site_name" content="Imtianx `s Blog"/>
+    <meta property="og:site_name" content="hequnsky `s Blog"/>
 
     
     <meta property="og:image" content="undefined"/>
     
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Imtianx `s Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="hequnsky `s Blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/lib/materialize.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -44,7 +44,7 @@
             <i class="fa fa-navicon"></i>
         </a>
         <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Imtianx `s Blog</a>
+            <a href="/" class="brand-logo hide-on-med-and-down">hequnsky `s Blog</a>
             <ul class="right hide-on-med-and-down">
                 
                     <li>
@@ -172,7 +172,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/android/">
-                    android <span class="right">28 篇</span></a>
+                    android <span class="right">37 篇</span></a>
                 </a>
             </li>
 
@@ -180,7 +180,7 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/android/学习笔记/">
-                    学习笔记 <span class="right">24 篇</span></a>
+                    学习笔记 <span class="right">33 篇</span></a>
                 </a>
             </li>
 
@@ -211,6 +211,30 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/linux/">
+                    linux <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/域名配置/">
+                    域名配置 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/工具软件/">
                     工具软件 <span class="right">3 篇</span></a>
                 </a>
@@ -229,6 +253,38 @@
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/工具软件/PL-SQL/">
                     PL-SQL <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/java/">
+                    java <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/基础知识/">
+                    基础知识 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/高级知识/">
+                    高级知识 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/面试/">
+                    面试 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -286,7 +342,12 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-04-23T08:04:25.000Z"><a href="/2016/04/23/android-sqlite-use/">2016-04-23</a></time>
+            <time class="pink-link-context" datetime="2016-04-23T16:04:25.000Z"><a href="/2016/04/23/android-sqlite-use/">2016-04-23</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -305,33 +366,50 @@
 
             <div class="entry pink-link-context">
                 <p>本文主要介绍了SQLit中相关的几个类（SQLiteDatabase、ContentValues、SQLiteOpenHelper）中的常用的方法及其作用。<br><a id="more"></a></p>
-<h2 id="1-SQLiteDatabase类"><a href="#1-SQLiteDatabase类" class="headerlink" title="1. SQLiteDatabase类"></a><strong>1. SQLiteDatabase类</strong></h2><p>（对 SQLite数据库增、删、改、查的操作）<br> 常用方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">execSQL(String  sql);</span><br><span class="line">execSQL(String sql, String[] args);</span><br></pre></td></tr></table></figure></p>
-<p>示例：删除 person表中personId＝1的记录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SQLiteDatabase db=this.getWritableDatabase();</span><br><span class="line">db.execSQL(“delete from  person where personId=?”,new</span><br><span class="line">String[]&#123;“1”&#125;);</span><br><span class="line">db.execSQL(“delete from  person where personId=1”);</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-SQLiteDatabase类"><a href="#1-SQLiteDatabase类" class="headerlink" title="1. SQLiteDatabase类"></a><strong>1. SQLiteDatabase类</strong></h2><p>（对 SQLite数据库增、删、改、查的操作）<br> 常用方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">execSQL(String  sql);</div><div class="line">execSQL(String sql, String[] args);</div></pre></td></tr></table></figure></p>
+<p>示例：删除 person表中personId＝1的记录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">SQLiteDatabase db=this.getWritableDatabase();</div><div class="line">db.execSQL(“delete from  person where personId=?”,new</div><div class="line">String[]&#123;“1”&#125;);</div><div class="line">db.execSQL(“delete from  person where personId=1”);</div></pre></td></tr></table></figure></p>
 <p>提示：this是 SQLiteOpenHelper类的实例，该类稍后介绍。</p>
-<h4 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Context.openOrCreateDatabase(Stringdbname,int mode);</span><br></pre></td></tr></table></figure>
+<h4 id="打开数据库"><a href="#打开数据库" class="headerlink" title="打开数据库"></a>打开数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Context.openOrCreateDatabase(Stringdbname,int mode);</div></pre></td></tr></table></figure>
 <p>作用：打开数据库，若数据库未创建则创建数据库。<br>参数－dbname：数据库文件名。<br>参数－mode：访问权限，有以下常量选择：<br>1、MODE_PRIVATE：不允许其它应用程序访问本数据库。<br>2、MODE_WORLD_READABLE：允许其它应用程序读本数据库。<br>3、MODE_WORLD_WRITEABLE：允许其它应用程序写本数据库。<br>4、MODE_APPEND：若数据库已存在，则允向数据库中许添加数据。</p>
-<h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">long insert(TABLE_NAME, String nullColumnHack, ContentValues   contentValues);</span><br></pre></td></tr></table></figure>
+<h4 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">long insert(TABLE_NAME, String nullColumnHack, ContentValues   contentValues);</div></pre></td></tr></table></figure>
 <p>作用：添加记录。<br>参数－TABLE_NAME：表名。<br>参数－nullColumnHack：若插入的数据是空行，则本参数必须设置为 null。<br>参数－contentValues：Map类型的数据，每组键－值对代表一列及其该列的数据</p>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int delete(TABLE_NAME, String  where, String[]  whereValue);</span><br></pre></td></tr></table></figure>
-<p>作用：删除记录。<br>参数－TABLE_NAME：表名。<br>参数－where：删除的条件，相当于 SQL语句中的where部分的 SQL命令。<br>参数－whereValue：符合参数 where的数据。该值是 String[]类型的数组。<br>示例：删除当前数据库中表peson中，字段 personId值为1的行，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete(“person”,”personId=?”,newString[]&#123;“1”&#125;);</span><br></pre></td></tr></table></figure></p>
-<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int update(TABLE_NAME, contentValues,String  where, String[] whereValue) ;</span><br></pre></td></tr></table></figure>
-<p>作用：更新记录。<br>参数－TABLE_NAME：表名。<br>参数－contentValues：Map类型的数据，每组键－值对代表一列及其该列的数据。可<br>存放多个键－值对数据，代表需要更新的数据。<br>参数－where：更新的条件，相当于 SQL语句中的where部分的 SQL命令。<br>参数－whereValue：符合参数 where的数据。该值是 String[]类型的数组。<br>示例：更新当前数据库的person表中,personId＝1的记录，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ContentValues  values=new ContentValues();//创建可存操作的键－值对的对象</span><br><span class="line">values.put(“name”,”李四”);//存放姓名数据</span><br><span class="line">values.put(“phone”,”13315577889”);//存放电话数据</span><br><span class="line">//实例化SQLiteDatabase对象</span><br><span class="line">SQLiteDatabase db=this.getWritableDatabase();</span><br><span class="line">db.update(“person” ,values,”personId=?”，new String[]&#123;“1”);//更新数据</span><br></pre></td></tr></table></figure></p>
-<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cursor rawQuery(String sql,String[]selectionArgs);</span><br></pre></td></tr></table></figure>
-<p>作用：执行带占位符的 SQL查询，返回的结果集存放在 Cursor对象中。<br>参数－sql：查询的 SQL命令。<br>参数－selectionArgs：查询的条件数据。<br>提示：<br>(1)Cursor类稍后介绍。<br>(2)若 sql中没有占位符，则第二个参数设置为 null。<br>(3)对数据表进行变更操作时，使用execSQL，对数据表进行查询时，使用rawQuery<br>方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cursorquery(table,projection,selection,selectionArgs,groupby,having,orderby);</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int delete(TABLE_NAME, String  where, String[]  whereValue);</div></pre></td></tr></table></figure>
+<p>作用：删除记录。<br>参数－TABLE_NAME：表名。<br>参数－where：删除的条件，相当于 SQL语句中的where部分的 SQL命令。<br>参数－whereValue：符合参数 where的数据。该值是 String[]类型的数组。<br>示例：删除当前数据库中表peson中，字段 personId值为1的行，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete(“person”,”personId=?”,newString[]&#123;“1”&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">int update(TABLE_NAME, contentValues,String  where, String[] whereValue) ;</div></pre></td></tr></table></figure>
+<p>作用：更新记录。<br>参数－TABLE_NAME：表名。<br>参数－contentValues：Map类型的数据，每组键－值对代表一列及其该列的数据。可<br>存放多个键－值对数据，代表需要更新的数据。<br>参数－where：更新的条件，相当于 SQL语句中的where部分的 SQL命令。<br>参数－whereValue：符合参数 where的数据。该值是 String[]类型的数组。<br>示例：更新当前数据库的person表中,personId＝1的记录，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ContentValues  values=new ContentValues();//创建可存操作的键－值对的对象</div><div class="line">values.put(“name”,”李四”);//存放姓名数据</div><div class="line">values.put(“phone”,”13315577889”);//存放电话数据</div><div class="line">//实例化SQLiteDatabase对象</div><div class="line">SQLiteDatabase db=this.getWritableDatabase();</div><div class="line">db.update(“person” ,values,”personId=?”，new String[]&#123;“1”);//更新数据</div></pre></td></tr></table></figure></p>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Cursor rawQuery(String sql,String[]selectionArgs);</div></pre></td></tr></table></figure>
+<p>作用：执行带占位符的 SQL查询，返回的结果集存放在 Cursor对象中。<br>参数－sql：查询的 SQL命令。<br>参数－selectionArgs：查询的条件数据。<br>提示：<br>(1)Cursor类稍后介绍。<br>(2)若 sql中没有占位符，则第二个参数设置为 null。<br>(3)对数据表进行变更操作时，使用execSQL，对数据表进行查询时，使用rawQuery<br>方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Cursorquery(table,projection,selection,selectionArgs,groupby,having,orderby);</div></pre></td></tr></table></figure></p>
 <p>作用：执行带占位符的 SQL查询，返回的结果集存放在 Cursor对象中。<br>cursor :返回值类型，返回查询结果游标对象。<br>  table : String ,要查询的表名。<br>  projection : String[]，要查询的列名，如果为 null，则查询所有列。<br>  selection : String,查询条件。<br>  selectionArgs:String[]为selection中的？补值的数组。<br>  groupby : String,分组列的列名。<br>  having:String,分组在查询的条件。<br>  orderby:String排序列的列名。</p>
 <h2 id="2、ContentValues类"><a href="#2、ContentValues类" class="headerlink" title="2、ContentValues类"></a>2、ContentValues类</h2><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>ContentValues类包装了HashMap类，该类用于存取键－值对的数据，每个键－值对数<br>据表示一列的列名和该列的数据。</p>
-<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ContentValues();</span><br></pre></td></tr></table></figure>
-<p>作用：无参构造方法，创建一个内部成员变量为 HashMap<string,object>的对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void put(String key,Object value);</span><br></pre></td></tr></table></figure></string,object></p>
-<p>作用：向成员变量 mValues中存放一个键－值对数据。<br>提示：value可以是 Java的所有基本数据类型、数组、对象的类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object** get(String key);</span><br></pre></td></tr></table></figure></p>
-<p>作用：获取键名 key对应的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX getAsXXX(String key);</span><br></pre></td></tr></table></figure></p>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ContentValues();</div></pre></td></tr></table></figure>
+<p>作用：无参构造方法，创建一个内部成员变量为 HashMap<string,object>的对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">void put(String key,Object value);</div></pre></td></tr></table></figure></string,object></p>
+<p>作用：向成员变量 mValues中存放一个键－值对数据。<br>提示：value可以是 Java的所有基本数据类型、数组、对象的类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object** get(String key);</div></pre></td></tr></table></figure></p>
+<p>作用：获取键名 key对应的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">XXX getAsXXX(String key);</div></pre></td></tr></table></figure></p>
 <p>作用：返回 XXX类型的值。<br>提示：XXX可以是所有基本类型的包装类，如 Integer，还有AsByteArray（字节数组类型）。</p>
 <h2 id="3-、SQLiteOpenHelper类"><a href="#3-、SQLiteOpenHelper类" class="headerlink" title="3 、SQLiteOpenHelper类"></a>3 、SQLiteOpenHelper类</h2><h4 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h4><p>SQLiteOpenHelper类是Android提供的用于操作 SQLite数据库的工具类，该工具类能<br>方便地创建数据库、表，以及管理数据库版本。</p>
-<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">synchronized SQLiteDatabasegetReadableDatabase();</span><br></pre></td></tr></table></figure>
-<p>作用：以读写的方式打开数据库对应的 SQLiteDatabase类的对象。<br>提示：synchronized关键字定义该方法为线程同步。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">synchronized SQLiteDatabasegetWriteableDatabase();</span><br></pre></td></tr></table></figure></p>
-<p>作用：以写的方式创建或打开数据库对应的 SQLiteDatabase类的对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abstract onCreate(SQLiteDatabase db);</span><br></pre></td></tr></table></figure></p>
+<h4 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">synchronized SQLiteDatabasegetReadableDatabase();</div></pre></td></tr></table></figure>
+<p>作用：以读写的方式打开数据库对应的 SQLiteDatabase类的对象。<br>提示：synchronized关键字定义该方法为线程同步。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">synchronized SQLiteDatabasegetWriteableDatabase();</div></pre></td></tr></table></figure></p>
+<p>作用：以写的方式创建或打开数据库对应的 SQLiteDatabase类的对象。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">abstract onCreate(SQLiteDatabase db);</div></pre></td></tr></table></figure></p>
 <p>作用：首次创建数据库时，回调本方法。</p>
 
+                
+<p class="pink-link-context">
+    <a href="/2016/04/23/android-sqlite-notebook/" rel="next" title="android SQLite学习手册">
+    上一篇：android SQLite学习手册
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2016/04/23/open-source/" rel="next" title="Android 开源项目分类汇总">
+    下一篇：Android 开源项目分类汇总
+  </a>
+</p>
+
+
             </div>
+			
         </div>
     </div>
 </article>
@@ -386,7 +464,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="social-group col m3 s12">
+            <div class="social-group col m4 s12">
                 <h5 class="white-text">社交</h5>
                 
                     <a class="social-link" href="https://github.com/imtianx" target="_blank">
@@ -397,26 +475,41 @@
                         <i class="fa fa-2x fa-weibo"></i>
                     </a>
                 
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
             </div>
             
 
             
-            <div class="col m9 s12">
+            <div class="col m8 s12">
                 <h5 class="white-text">友情链接</h5>
                 
                     <a class="social-link" href="http://androidweekly.cn/" target="_blank">android开发技术周报</a>
+                
+                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                
+                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
                 
                     <a class="social-link" href="http://androidcat.com/" target="_blank">androidcat</a>
                 
                     <a class="social-link" href="http://www.jianshu.com/" target="_blank">简书</a>
                 
-                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
-                
                     <a class="social-link" href="http://www.csdn.net/" target="_blank">CSDN</a>
                 
                     <a class="social-link" href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
                 
-                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                    <a class="social-link" href="http://t.cn/Rij9p4Y" target="_blank">翻墙SSBetter</a>
+                
+                    <a class="social-link" href="http://blog.kictto.tech/" target="_blank">Kictto</a>
                 
             </div>
             
@@ -426,7 +519,7 @@
 
     <div class="footer-copyright pink-link-context">
         <div class="container">
-            © 2016-2017  imtianx.cn, All rights reserved.
+            © 2016-2017  imtianx.cn,  鄂ICP备17001358号-1
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
@@ -445,6 +538,8 @@
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
 <script>
     (function($) {
@@ -486,6 +581,22 @@
 
             // 文章目录
             $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
             // 修正文章目录的left-border颜色
             var color = $('.table-of-contents-text').css('color');
             $('.table-of-contents-link').css('border-left-color', color);

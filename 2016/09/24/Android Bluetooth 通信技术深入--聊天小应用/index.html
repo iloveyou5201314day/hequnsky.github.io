@@ -7,24 +7,23 @@
 
     
 
-    <title>Android Bluetooth 通信技术深入--聊天小应用 | Imtianx `s Blog</title>
+    <title>Android Bluetooth 通信技术深入--聊天小应用 | hequnsky `s Blog</title>
     <meta name="author" content="imtianx">
     
-    <meta name="description" content="目前，市场上的大部分手机都带有蓝牙，尽管使用的不多，但作为开发者，我们还有必要了解其原理。最近的项目需要用到蓝牙技术，于是写了个 蓝牙的聊天小demo。
-1. 效果示意图这里需要两部手机进行测试。其中一部作为蓝牙服务器，另一部作为蓝牙客户端，进行通信。">
+    <meta name="description" content="hequnsky的个人技术博客">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:title" content="Android Bluetooth 通信技术深入--聊天小应用"/>
-    <meta property="og:site_name" content="Imtianx `s Blog"/>
+    <meta property="og:site_name" content="hequnsky `s Blog"/>
 
     
     <meta property="og:image" content="undefined"/>
     
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Imtianx `s Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="hequnsky `s Blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/lib/materialize.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -45,7 +44,7 @@
             <i class="fa fa-navicon"></i>
         </a>
         <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Imtianx `s Blog</a>
+            <a href="/" class="brand-logo hide-on-med-and-down">hequnsky `s Blog</a>
             <ul class="right hide-on-med-and-down">
                 
                     <li>
@@ -173,7 +172,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/android/">
-                    android <span class="right">28 篇</span></a>
+                    android <span class="right">37 篇</span></a>
                 </a>
             </li>
 
@@ -181,7 +180,7 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/android/学习笔记/">
-                    学习笔记 <span class="right">24 篇</span></a>
+                    学习笔记 <span class="right">33 篇</span></a>
                 </a>
             </li>
 
@@ -212,6 +211,30 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/linux/">
+                    linux <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/域名配置/">
+                    域名配置 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/工具软件/">
                     工具软件 <span class="right">3 篇</span></a>
                 </a>
@@ -230,6 +253,38 @@
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/工具软件/PL-SQL/">
                     PL-SQL <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/java/">
+                    java <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/基础知识/">
+                    基础知识 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/高级知识/">
+                    高级知识 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/面试/">
+                    面试 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -287,7 +342,12 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-09-24T08:06:25.000Z"><a href="/2016/09/24/Android Bluetooth 通信技术深入--聊天小应用/">2016-09-24</a></time>
+            <time class="pink-link-context" datetime="2016-09-24T16:06:25.000Z"><a href="/2016/09/24/Android Bluetooth 通信技术深入--聊天小应用/">2016-09-24</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -316,21 +376,38 @@
 <li>读取和写入数据；</li>
 <li>关闭连接和蓝牙。</li>
 </ol>
-<h3 id="3-具体的实现"><a href="#3-具体的实现" class="headerlink" title="3.具体的实现"></a>3.具体的实现</h3><h4 id="3-1-开启蓝牙"><a href="#3-1-开启蓝牙" class="headerlink" title="3.1 开启蓝牙"></a>3.1 开启蓝牙</h4><p>首先获取蓝牙适配器，若存在蓝牙未开则打开蓝牙，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();</span><br><span class="line">        if (mBluetoothAdapter == null) &#123;</span><br><span class="line">            Toast.makeText(getActivity(), &quot;无蓝牙功能&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            if (!mBluetoothAdapter.isEnabled()) &#123;</span><br><span class="line">                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);</span><br><span class="line">                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-2-搜索蓝牙"><a href="#3-2-搜索蓝牙" class="headerlink" title="3.2 搜索蓝牙"></a>3.2 搜索蓝牙</h4><p>首先开启蓝牙搜索功能，然后通过注册广播，搜索蓝牙设备，搜索完成后将其加入到蓝牙列表。<br>搜索蓝牙：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (mBluetoothAdapter.isDiscovering()) &#123;</span><br><span class="line">    mBluetoothAdapter.cancelDiscovery();</span><br><span class="line">    mBtnStartSearch.setText(&quot;重新搜索&quot;);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    mDatas.clear();</span><br><span class="line">    mAdapter.notifyDataSetChanged();</span><br><span class="line">    //添加设备信息到列表</span><br><span class="line">    init();</span><br><span class="line">&#125;</span><br><span class="line">mBluetoothAdapter.startDiscovery();</span><br><span class="line">mBtnStartSearch.setText(&quot;ֹͣ停止搜索&quot;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-具体的实现"><a href="#3-具体的实现" class="headerlink" title="3.具体的实现"></a>3.具体的实现</h3><h4 id="3-1-开启蓝牙"><a href="#3-1-开启蓝牙" class="headerlink" title="3.1 开启蓝牙"></a>3.1 开启蓝牙</h4><p>首先获取蓝牙适配器，若存在蓝牙未开则打开蓝牙，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();</div><div class="line">        if (mBluetoothAdapter == null) &#123;</div><div class="line">            Toast.makeText(getActivity(), &quot;无蓝牙功能&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">        &#125; else &#123;</div><div class="line">            if (!mBluetoothAdapter.isEnabled()) &#123;</div><div class="line">                Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);</div><div class="line">                startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);</div><div class="line">            &#125;</div><div class="line">        &#125;</div></pre></td></tr></table></figure></p>
+<h4 id="3-2-搜索蓝牙"><a href="#3-2-搜索蓝牙" class="headerlink" title="3.2 搜索蓝牙"></a>3.2 搜索蓝牙</h4><p>首先开启蓝牙搜索功能，然后通过注册广播，搜索蓝牙设备，搜索完成后将其加入到蓝牙列表。<br>搜索蓝牙：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">if (mBluetoothAdapter.isDiscovering()) &#123;</div><div class="line">    mBluetoothAdapter.cancelDiscovery();</div><div class="line">    mBtnStartSearch.setText(&quot;重新搜索&quot;);</div><div class="line">&#125; else &#123;</div><div class="line">    mDatas.clear();</div><div class="line">    mAdapter.notifyDataSetChanged();</div><div class="line">    //添加设备信息到列表</div><div class="line">    init();</div><div class="line">&#125;</div><div class="line">mBluetoothAdapter.startDiscovery();</div><div class="line">mBtnStartSearch.setText(&quot;ֹͣ停止搜索&quot;);</div></pre></td></tr></table></figure></p>
 <p>注册蓝牙广播：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * 搜索设备广播</span><br><span class="line">     */</span><br><span class="line">private final BroadcastReceiver mReceiver = new BroadcastReceiver() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onReceive(Context context, Intent intent) &#123;</span><br><span class="line">        String action = intent.getAction();</span><br><span class="line"></span><br><span class="line">        if (BluetoothDevice.ACTION_FOUND.equals(action)) &#123;</span><br><span class="line">            // 获得设备信息</span><br><span class="line">            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);</span><br><span class="line">            // 绑定的状态不一样则进行添加</span><br><span class="line">            if (device.getBondState() != BluetoothDevice.BOND_BONDED) &#123;</span><br><span class="line">                mDatas.add(new BtInfo(device.getName(), device.getAddress(), false));</span><br><span class="line">                mAdapter.notifyDataSetChanged();</span><br><span class="line">                mListView.setSelection(mDatas.size() - 1);</span><br><span class="line">            &#125;</span><br><span class="line">            // 搜索完成</span><br><span class="line">        &#125; else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) &#123;</span><br><span class="line">            if (mListView.getCount() == 0) &#123;</span><br><span class="line">                Toast.makeText(context, &quot;没有发现设备！&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">            &#125;</span><br><span class="line">            mBtnStartSearch.setText(&quot;重新搜索&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"> /**</span><br><span class="line"> * 注册广播</span><br><span class="line"> */</span><br><span class="line">private void registerBroadcast() &#123;</span><br><span class="line">    //设备被发现广播</span><br><span class="line">    IntentFilter discoveryFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);</span><br><span class="line">    getActivity().registerReceiver(mReceiver, discoveryFilter);</span><br><span class="line"></span><br><span class="line">    // 设备发现完成</span><br><span class="line">    IntentFilter foundFilter = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);</span><br><span class="line">    getActivity().registerReceiver(mReceiver, foundFilter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-3-连接蓝牙设备"><a href="#3-3-连接蓝牙设备" class="headerlink" title="3.3 连接蓝牙设备"></a>3.3 连接蓝牙设备</h4><p>这里，使用listview展示蓝牙列表信息，item 的点击事件即为连接相应的蓝牙设备，点击某一项后跳转到会话页面，并通知他刷新信息，为方便，这里使用了EventBus来订阅事件，避免使用接口，如下listview 的item 的点击事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">//列表item设置监听，</span><br><span class="line">mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void onItemClick(AdapterView&lt;?&gt; adapterView, View view, int i, long l) &#123;</span><br><span class="line">        BtInfo info = mDatas.get(i);</span><br><span class="line">        //好友mac地址</span><br><span class="line">        MainActivity.FRIEND_MAC_ADDRESS = info.getAddress();</span><br><span class="line">        //显示提示对话框</span><br><span class="line">        final AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());</span><br><span class="line">        dialog.setTitle(&quot;连接&quot;);</span><br><span class="line">        dialog.setMessage(&quot;名称：&quot; + info.getName() + &quot;\n&quot; + &quot;地址：&quot; + info.getAddress());</span><br><span class="line">        dialog.setPositiveButton(&quot;连接&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(DialogInterface dialogInterface, int i) &#123;</span><br><span class="line">                mBluetoothAdapter.cancelDiscovery();</span><br><span class="line">                mBtnStartSearch.setText(&quot;重新搜索&quot;);</span><br><span class="line"></span><br><span class="line">                //连接后，跳转到会话页面</span><br><span class="line">                MainActivity.mType = MainActivity.Type.CILENT;</span><br><span class="line">                //viewPager 显示第二页</span><br><span class="line">                MainActivity.mViewPager.setCurrentItem(1);</span><br><span class="line">                //通知 ChatListFragment 刷新信息</span><br><span class="line">                EventBus.getDefault().post(new EventMsg(1));</span><br><span class="line"></span><br><span class="line">                dialogInterface.dismiss();</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        dialog.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void onClick(DialogInterface dialogInterface, int i) &#123;</span><br><span class="line">                MainActivity.FRIEND_MAC_ADDRESS = &quot;&quot;;</span><br><span class="line">                dialogInterface.dismiss();</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        dialog.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-4-创建蓝牙socket"><a href="#3-4-创建蓝牙socket" class="headerlink" title="3.4 创建蓝牙socket"></a>3.4 创建蓝牙socket</h4><p>由于socketd的操作会阻塞线程，这里在子线程中进行创建。<br><code>BluetoothSocket</code> 客户端线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// 客户端线程</span><br><span class="line">private class ClientThread extends Thread &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            mSocket = mDevice.createRfcommSocketToServiceRecord(UUID.fromString(&quot;00001101-0000-1000-8000-00805F9B34FB&quot;));</span><br><span class="line">            Message msg = new Message();</span><br><span class="line">            msg.obj = &quot;请稍候，正在连接服务器:&quot; + MainActivity.FRIEND_MAC_ADDRESS;</span><br><span class="line">            msg.what = STATUS_CONNECT;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line"></span><br><span class="line">            mSocket.connect();</span><br><span class="line"></span><br><span class="line">            msg = new Message();</span><br><span class="line">            msg.obj = &quot;已经连接上服务端！可以发送信息。&quot;;</span><br><span class="line">            msg.what = STATUS_CONNECT_SUCCESS;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">            // 启动接受数据</span><br><span class="line">            mReadThread = new ReadThread();</span><br><span class="line">            mReadThread.start();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            Message msg = new Message();</span><br><span class="line">            msg.obj = &quot;连接服务端异常！断开连接重新试一试。&quot;;</span><br><span class="line">            msg.what = STATUS_CONNECT_SUCCESS;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>创建蓝牙连接时需要用到<code>UUID</code>,如需查看更多UUID，请点击<a href="http://blog.csdn.net/txadf/article/details/52235851" target="_blank" rel="external">这里</a>。<br><code>BluetoothServerSocket</code>蓝牙服务端socket线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> // 服务器端线程</span><br><span class="line">private class ServerThread extends Thread &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            // 创建一个蓝牙服务器 参数分别：服务器名称、UUID</span><br><span class="line">            mServerSocket = mBluetoothAdapter.listenUsingRfcommWithServiceRecord(&quot;btserver&quot;,</span><br><span class="line">                    UUID.fromString(&quot;00001101-0000-1000-8000-00805F9B34FB&quot;));</span><br><span class="line"></span><br><span class="line">            Message msg = new Message();</span><br><span class="line">            msg.obj = &quot;请稍候，正在等待客户端的连接...&quot;;</span><br><span class="line">            msg.what = STATUS_CONNECT;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line"></span><br><span class="line">			/* 接受客户端的连接请求 */</span><br><span class="line">            mSocket = mServerSocket.accept();</span><br><span class="line"></span><br><span class="line">            msg = new Message();</span><br><span class="line">            msg.obj = &quot;客户端已经连接上！可以发送信息。&quot;;</span><br><span class="line">            msg.what = STATUS_CONNECT;</span><br><span class="line">            mHandler.sendMessage(msg);</span><br><span class="line">            // 启动接受数据</span><br><span class="line">            mReadThread = new ReadThread();</span><br><span class="line">            mReadThread.start();</span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>启动蓝牙客户端和服务端线程方法如下(详情参见<a href="">类</a>的<code>onEventMainThread</code>方法)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">if (MainActivity.mType == MainActivity.Type.CILENT) &#123;</span><br><span class="line">    String address = MainActivity.FRIEND_MAC_ADDRESS;//蓝牙地址</span><br><span class="line">    if (!TextUtils.isEmpty(address)) &#123;</span><br><span class="line">        mDevice = mBluetoothAdapter.getRemoteDevice(address);</span><br><span class="line">        mClientThread = new ClientThread();</span><br><span class="line">        mClientThread.start();</span><br><span class="line">        MainActivity.isOpen = true;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        Toast.makeText(getActivity(), &quot;address is null !&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125; else if (MainActivity.mType == MainActivity.Type.SERVER) &#123;</span><br><span class="line">    mServerThread = new ServerThread();</span><br><span class="line">    mServerThread.start();</span><br><span class="line">    MainActivity.isOpen = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="3-5-读取和写入数据"><a href="#3-5-读取和写入数据" class="headerlink" title="3.5 读取和写入数据"></a>3.5 读取和写入数据</h4><p>这里主要是通过获取输入输出流来读取和发送数据，以读取数据为例，如下现读取数据线程代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// 读取数据</span><br><span class="line">private class ReadThread extends Thread &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        byte[] buffer = new byte[1024];</span><br><span class="line">        int bytes;</span><br><span class="line">        InputStream is = null;</span><br><span class="line">        try &#123;</span><br><span class="line">            is = mSocket.getInputStream();</span><br><span class="line">            while (true) &#123;</span><br><span class="line">                if ((bytes = is.read(buffer)) &gt; 0) &#123;</span><br><span class="line">                    byte[] buf_data = new byte[bytes];</span><br><span class="line">                    for (int i = 0; i &lt; bytes; i++) &#123;</span><br><span class="line">                        buf_data[i] = buffer[i];</span><br><span class="line">                    &#125;</span><br><span class="line">                    String s = new String(buf_data);</span><br><span class="line">                    Message msg = new Message();</span><br><span class="line">                    msg.obj = s;</span><br><span class="line">                    msg.what = 1;</span><br><span class="line">                    mHandler.sendMessage(msg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (IOException e1) &#123;</span><br><span class="line">            e1.printStackTrace();</span><br><span class="line">        &#125; finally &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                is.close();</span><br><span class="line">            &#125; catch (IOException e1) &#123;</span><br><span class="line">                e1.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">     * 搜索设备广播</div><div class="line">     */</div><div class="line">private final BroadcastReceiver mReceiver = new BroadcastReceiver() &#123;</div><div class="line">    @Override</div><div class="line">    public void onReceive(Context context, Intent intent) &#123;</div><div class="line">        String action = intent.getAction();</div><div class="line"></div><div class="line">        if (BluetoothDevice.ACTION_FOUND.equals(action)) &#123;</div><div class="line">            // 获得设备信息</div><div class="line">            BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);</div><div class="line">            // 绑定的状态不一样则进行添加</div><div class="line">            if (device.getBondState() != BluetoothDevice.BOND_BONDED) &#123;</div><div class="line">                mDatas.add(new BtInfo(device.getName(), device.getAddress(), false));</div><div class="line">                mAdapter.notifyDataSetChanged();</div><div class="line">                mListView.setSelection(mDatas.size() - 1);</div><div class="line">            &#125;</div><div class="line">            // 搜索完成</div><div class="line">        &#125; else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) &#123;</div><div class="line">            if (mListView.getCount() == 0) &#123;</div><div class="line">                Toast.makeText(context, &quot;没有发现设备！&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">            &#125;</div><div class="line">            mBtnStartSearch.setText(&quot;重新搜索&quot;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"> /**</div><div class="line"> * 注册广播</div><div class="line"> */</div><div class="line">private void registerBroadcast() &#123;</div><div class="line">    //设备被发现广播</div><div class="line">    IntentFilter discoveryFilter = new IntentFilter(BluetoothDevice.ACTION_FOUND);</div><div class="line">    getActivity().registerReceiver(mReceiver, discoveryFilter);</div><div class="line"></div><div class="line">    // 设备发现完成</div><div class="line">    IntentFilter foundFilter = new IntentFilter(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);</div><div class="line">    getActivity().registerReceiver(mReceiver, foundFilter);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-3-连接蓝牙设备"><a href="#3-3-连接蓝牙设备" class="headerlink" title="3.3 连接蓝牙设备"></a>3.3 连接蓝牙设备</h4><p>这里，使用listview展示蓝牙列表信息，item 的点击事件即为连接相应的蓝牙设备，点击某一项后跳转到会话页面，并通知他刷新信息，为方便，这里使用了EventBus来订阅事件，避免使用接口，如下listview 的item 的点击事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">//列表item设置监听，</div><div class="line">mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() &#123;</div><div class="line">    @Override</div><div class="line">    public void onItemClick(AdapterView&lt;?&gt; adapterView, View view, int i, long l) &#123;</div><div class="line">        BtInfo info = mDatas.get(i);</div><div class="line">        //好友mac地址</div><div class="line">        MainActivity.FRIEND_MAC_ADDRESS = info.getAddress();</div><div class="line">        //显示提示对话框</div><div class="line">        final AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());</div><div class="line">        dialog.setTitle(&quot;连接&quot;);</div><div class="line">        dialog.setMessage(&quot;名称：&quot; + info.getName() + &quot;\n&quot; + &quot;地址：&quot; + info.getAddress());</div><div class="line">        dialog.setPositiveButton(&quot;连接&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(DialogInterface dialogInterface, int i) &#123;</div><div class="line">                mBluetoothAdapter.cancelDiscovery();</div><div class="line">                mBtnStartSearch.setText(&quot;重新搜索&quot;);</div><div class="line"></div><div class="line">                //连接后，跳转到会话页面</div><div class="line">                MainActivity.mType = MainActivity.Type.CILENT;</div><div class="line">                //viewPager 显示第二页</div><div class="line">                MainActivity.mViewPager.setCurrentItem(1);</div><div class="line">                //通知 ChatListFragment 刷新信息</div><div class="line">                EventBus.getDefault().post(new EventMsg(1));</div><div class="line"></div><div class="line">                dialogInterface.dismiss();</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        dialog.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">            @Override</div><div class="line">            public void onClick(DialogInterface dialogInterface, int i) &#123;</div><div class="line">                MainActivity.FRIEND_MAC_ADDRESS = &quot;&quot;;</div><div class="line">                dialogInterface.dismiss();</div><div class="line"></div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        dialog.show();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="3-4-创建蓝牙socket"><a href="#3-4-创建蓝牙socket" class="headerlink" title="3.4 创建蓝牙socket"></a>3.4 创建蓝牙socket</h4><p>由于socketd的操作会阻塞线程，这里在子线程中进行创建。<br><code>BluetoothSocket</code> 客户端线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// 客户端线程</div><div class="line">private class ClientThread extends Thread &#123;</div><div class="line">    public void run() &#123;</div><div class="line">        try &#123;</div><div class="line">            mSocket = mDevice.createRfcommSocketToServiceRecord(UUID.fromString(&quot;00001101-0000-1000-8000-00805F9B34FB&quot;));</div><div class="line">            Message msg = new Message();</div><div class="line">            msg.obj = &quot;请稍候，正在连接服务器:&quot; + MainActivity.FRIEND_MAC_ADDRESS;</div><div class="line">            msg.what = STATUS_CONNECT;</div><div class="line">            mHandler.sendMessage(msg);</div><div class="line"></div><div class="line">            mSocket.connect();</div><div class="line"></div><div class="line">            msg = new Message();</div><div class="line">            msg.obj = &quot;已经连接上服务端！可以发送信息。&quot;;</div><div class="line">            msg.what = STATUS_CONNECT_SUCCESS;</div><div class="line">            mHandler.sendMessage(msg);</div><div class="line">            // 启动接受数据</div><div class="line">            mReadThread = new ReadThread();</div><div class="line">            mReadThread.start();</div><div class="line">        &#125; catch (IOException e) &#123;</div><div class="line">            Message msg = new Message();</div><div class="line">            msg.obj = &quot;连接服务端异常！断开连接重新试一试。&quot;;</div><div class="line">            msg.what = STATUS_CONNECT_SUCCESS;</div><div class="line">            mHandler.sendMessage(msg);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>创建蓝牙连接时需要用到<code>UUID</code>,如需查看更多UUID，请点击<a href="http://blog.csdn.net/txadf/article/details/52235851" target="_blank" rel="external">这里</a>。<br><code>BluetoothServerSocket</code>蓝牙服务端socket线程：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"> // 服务器端线程</div><div class="line">private class ServerThread extends Thread &#123;</div><div class="line">    public void run() &#123;</div><div class="line">        try &#123;</div><div class="line">            // 创建一个蓝牙服务器 参数分别：服务器名称、UUID</div><div class="line">            mServerSocket = mBluetoothAdapter.listenUsingRfcommWithServiceRecord(&quot;btserver&quot;,</div><div class="line">                    UUID.fromString(&quot;00001101-0000-1000-8000-00805F9B34FB&quot;));</div><div class="line"></div><div class="line">            Message msg = new Message();</div><div class="line">            msg.obj = &quot;请稍候，正在等待客户端的连接...&quot;;</div><div class="line">            msg.what = STATUS_CONNECT;</div><div class="line">            mHandler.sendMessage(msg);</div><div class="line"></div><div class="line">			/* 接受客户端的连接请求 */</div><div class="line">            mSocket = mServerSocket.accept();</div><div class="line"></div><div class="line">            msg = new Message();</div><div class="line">            msg.obj = &quot;客户端已经连接上！可以发送信息。&quot;;</div><div class="line">            msg.what = STATUS_CONNECT;</div><div class="line">            mHandler.sendMessage(msg);</div><div class="line">            // 启动接受数据</div><div class="line">            mReadThread = new ReadThread();</div><div class="line">            mReadThread.start();</div><div class="line">        &#125; catch (IOException e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>启动蓝牙客户端和服务端线程方法如下(详情参见<a href="">类</a>的<code>onEventMainThread</code>方法)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">if (MainActivity.mType == MainActivity.Type.CILENT) &#123;</div><div class="line">    String address = MainActivity.FRIEND_MAC_ADDRESS;//蓝牙地址</div><div class="line">    if (!TextUtils.isEmpty(address)) &#123;</div><div class="line">        mDevice = mBluetoothAdapter.getRemoteDevice(address);</div><div class="line">        mClientThread = new ClientThread();</div><div class="line">        mClientThread.start();</div><div class="line">        MainActivity.isOpen = true;</div><div class="line">    &#125; else &#123;</div><div class="line">        Toast.makeText(getActivity(), &quot;address is null !&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">    &#125;</div><div class="line">&#125; else if (MainActivity.mType == MainActivity.Type.SERVER) &#123;</div><div class="line">    mServerThread = new ServerThread();</div><div class="line">    mServerThread.start();</div><div class="line">    MainActivity.isOpen = true;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="3-5-读取和写入数据"><a href="#3-5-读取和写入数据" class="headerlink" title="3.5 读取和写入数据"></a>3.5 读取和写入数据</h4><p>这里主要是通过获取输入输出流来读取和发送数据，以读取数据为例，如下现读取数据线程代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">// 读取数据</div><div class="line">private class ReadThread extends Thread &#123;</div><div class="line">    public void run() &#123;</div><div class="line">        byte[] buffer = new byte[1024];</div><div class="line">        int bytes;</div><div class="line">        InputStream is = null;</div><div class="line">        try &#123;</div><div class="line">            is = mSocket.getInputStream();</div><div class="line">            while (true) &#123;</div><div class="line">                if ((bytes = is.read(buffer)) &gt; 0) &#123;</div><div class="line">                    byte[] buf_data = new byte[bytes];</div><div class="line">                    for (int i = 0; i &lt; bytes; i++) &#123;</div><div class="line">                        buf_data[i] = buffer[i];</div><div class="line">                    &#125;</div><div class="line">                    String s = new String(buf_data);</div><div class="line">                    Message msg = new Message();</div><div class="line">                    msg.obj = s;</div><div class="line">                    msg.what = 1;</div><div class="line">                    mHandler.sendMessage(msg);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125; catch (IOException e1) &#123;</div><div class="line">            e1.printStackTrace();</div><div class="line">        &#125; finally &#123;</div><div class="line">            try &#123;</div><div class="line">                is.close();</div><div class="line">            &#125; catch (IOException e1) &#123;</div><div class="line">                e1.printStackTrace();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>发送消息与此类似，具体请参见 会话类 <a href=""></a>。</p>
 <h4 id="3-6-关闭连接"><a href="#3-6-关闭连接" class="headerlink" title="3.6 关闭连接"></a>3.6 关闭连接</h4><p>主要是关闭各个线程和关闭socket。</p>
 <p>至此，整个蓝牙同信已经完成，测试时需要两个手机，一个座位服务器，一个作为客户端，实现他们间的通信。</p>
 <p><a href="https://github.com/imtianx/StudyDemoForAndroid/blob/master/A05-bluetoothchatdemo" target="_blank" rel="external">示例demo下载</a></p>
 
+                
+<p class="pink-link-context">
+    <a href="/2016/10/15/java 三大特性：封装、继承和多态/" rel="next" title="java 三大特性：封装、继承和多态">
+    上一篇：java 三大特性：封装、继承和多态
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2016/09/20/Android Bluetooth 蓝牙技术初体验/" rel="next" title="Android Bluetooth 蓝牙技术初体验">
+    下一篇：Android Bluetooth 蓝牙技术初体验
+  </a>
+</p>
+
+
             </div>
+			
         </div>
     </div>
 </article>
@@ -385,7 +462,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="social-group col m3 s12">
+            <div class="social-group col m4 s12">
                 <h5 class="white-text">社交</h5>
                 
                     <a class="social-link" href="https://github.com/imtianx" target="_blank">
@@ -396,26 +473,41 @@
                         <i class="fa fa-2x fa-weibo"></i>
                     </a>
                 
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
             </div>
             
 
             
-            <div class="col m9 s12">
+            <div class="col m8 s12">
                 <h5 class="white-text">友情链接</h5>
                 
                     <a class="social-link" href="http://androidweekly.cn/" target="_blank">android开发技术周报</a>
+                
+                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                
+                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
                 
                     <a class="social-link" href="http://androidcat.com/" target="_blank">androidcat</a>
                 
                     <a class="social-link" href="http://www.jianshu.com/" target="_blank">简书</a>
                 
-                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
-                
                     <a class="social-link" href="http://www.csdn.net/" target="_blank">CSDN</a>
                 
                     <a class="social-link" href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
                 
-                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                    <a class="social-link" href="http://t.cn/Rij9p4Y" target="_blank">翻墙SSBetter</a>
+                
+                    <a class="social-link" href="http://blog.kictto.tech/" target="_blank">Kictto</a>
                 
             </div>
             
@@ -425,7 +517,7 @@
 
     <div class="footer-copyright pink-link-context">
         <div class="container">
-            © 2016-2017  imtianx.cn, All rights reserved.
+            © 2016-2017  imtianx.cn,  鄂ICP备17001358号-1
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
@@ -444,6 +536,8 @@
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
 <script>
     (function($) {
@@ -485,6 +579,22 @@
 
             // 文章目录
             $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
             // 修正文章目录的left-border颜色
             var color = $('.table-of-contents-text').css('color');
             $('.table-of-contents-link').css('border-left-color', color);

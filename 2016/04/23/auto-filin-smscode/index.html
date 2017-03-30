@@ -7,23 +7,23 @@
 
     
 
-    <title>android自动获取短信验证码 | Imtianx `s Blog</title>
+    <title>android自动获取短信验证码 | hequnsky `s Blog</title>
     <meta name="author" content="imtianx">
     
-    <meta name="description" content="这里主要使用了ContentObserver类（观察者模式类）来监听短信的变化，然后通过正则表达式，提取出短信，然后在子线程中更新UI，显示验证码。">
+    <meta name="description" content="hequnsky的个人技术博客">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:title" content="android自动获取短信验证码"/>
-    <meta property="og:site_name" content="Imtianx `s Blog"/>
+    <meta property="og:site_name" content="hequnsky `s Blog"/>
 
     
     <meta property="og:image" content="undefined"/>
     
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Imtianx `s Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="hequnsky `s Blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/lib/materialize.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -44,7 +44,7 @@
             <i class="fa fa-navicon"></i>
         </a>
         <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Imtianx `s Blog</a>
+            <a href="/" class="brand-logo hide-on-med-and-down">hequnsky `s Blog</a>
             <ul class="right hide-on-med-and-down">
                 
                     <li>
@@ -172,7 +172,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/android/">
-                    android <span class="right">28 篇</span></a>
+                    android <span class="right">37 篇</span></a>
                 </a>
             </li>
 
@@ -180,7 +180,7 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/android/学习笔记/">
-                    学习笔记 <span class="right">24 篇</span></a>
+                    学习笔记 <span class="right">33 篇</span></a>
                 </a>
             </li>
 
@@ -211,6 +211,30 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/linux/">
+                    linux <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/域名配置/">
+                    域名配置 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/工具软件/">
                     工具软件 <span class="right">3 篇</span></a>
                 </a>
@@ -229,6 +253,38 @@
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/工具软件/PL-SQL/">
                     PL-SQL <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/java/">
+                    java <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/基础知识/">
+                    基础知识 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/高级知识/">
+                    高级知识 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/面试/">
+                    面试 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -286,7 +342,12 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-04-23T08:08:25.000Z"><a href="/2016/04/23/auto-filin-smscode/">2016-04-23</a></time>
+            <time class="pink-link-context" datetime="2016-04-23T16:08:25.000Z"><a href="/2016/04/23/auto-filin-smscode/">2016-04-23</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -311,14 +372,31 @@
 <li>由于 ContentObserver 的生命周期不同步于 Activity 和 Service 等，因此，在不需要时，需要手动的调用 unregisterContentObserver() 去取消注册。</li>
 </ol>
 <p><em>具体使用：</em></p>
-<h3 id="1、继承ContentObserver，重写onChange方法"><a href="#1、继承ContentObserver，重写onChange方法" class="headerlink" title="1、继承ContentObserver，重写onChange方法"></a>1、继承ContentObserver，重写onChange方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">package com.tx.testsms;</span><br><span class="line">/**</span><br><span class="line"> * 自动读取短信验证码</span><br><span class="line"> */</span><br><span class="line">import java.util.regex.Matcher;</span><br><span class="line">import java.util.regex.Pattern;</span><br><span class="line"></span><br><span class="line">import android.content.Context;</span><br><span class="line">import android.database.ContentObserver;</span><br><span class="line">import android.database.Cursor;</span><br><span class="line">import android.net.Uri;</span><br><span class="line">import android.os.Handler;</span><br><span class="line">import android.util.Log;</span><br><span class="line"></span><br><span class="line">public class SmsObserver extends ContentObserver &#123;</span><br><span class="line"></span><br><span class="line">	private Context mContext;</span><br><span class="line">	private Handler mHandler;</span><br><span class="line">	private String tel_phone = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">	private String code;</span><br><span class="line"></span><br><span class="line">	public void setTel_phone(String tel_phone) &#123;</span><br><span class="line">		this.tel_phone = tel_phone;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public SmsObserver(Context mContext, Handler handler) &#123;</span><br><span class="line">		super(handler);</span><br><span class="line">		this.mContext = mContext;</span><br><span class="line">		this.mHandler = handler;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void onChange(boolean selfChange, Uri uri) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		super.onChange(selfChange, uri);</span><br><span class="line"></span><br><span class="line">		if(uri.toString().equals(&quot;content:://sms//raw&quot;))&#123;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		Uri inboxUri = Uri.parse(&quot;content://sms//inbox&quot;);</span><br><span class="line"></span><br><span class="line">		Cursor cursor = mContext.getContentResolver().</span><br><span class="line">				query(inboxUri, null, null, null, &quot;date desc&quot;);</span><br><span class="line"></span><br><span class="line">		if(cursor!=null)&#123;</span><br><span class="line">			if(cursor.moveToFirst())&#123;</span><br><span class="line">				String address = cursor.getString(cursor.getColumnIndex(&quot;address&quot;));</span><br><span class="line">				Log.i(&quot;test&quot;, &quot;短信验证码为：--------&quot;+address);</span><br><span class="line"></span><br><span class="line">				String body = cursor.getString(cursor.getColumnIndex(&quot;body&quot;));</span><br><span class="line">				Log.i(&quot;test&quot;, &quot;uri---------&quot;+inboxUri);</span><br><span class="line"></span><br><span class="line">				if(address.equals(tel_phone))&#123;</span><br><span class="line"></span><br><span class="line">					Pattern pattern = Pattern.compile(&quot;(\\d&#123;4&#125;)&quot;);</span><br><span class="line">					Matcher matcher = pattern.matcher(body);</span><br><span class="line"></span><br><span class="line">					if(matcher.find())&#123;</span><br><span class="line">						code = matcher.group(0);</span><br><span class="line">						Log.i(&quot;test&quot;, &quot;短信验证码为：--------&quot;+code);</span><br><span class="line">						mHandler.obtainMessage(</span><br><span class="line">								MainActivity.MSG_RECEIVED_CODE,code).sendToTarget();</span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">			cursor.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册"><a href="#2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册" class="headerlink" title="2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册"></a>2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">package com.tx.testsms;</span><br><span class="line"></span><br><span class="line">import android.app.Activity;</span><br><span class="line">import android.net.Uri;</span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.os.Handler;</span><br><span class="line">import android.os.Message;</span><br><span class="line">import android.view.View;</span><br><span class="line">import android.view.View.OnClickListener;</span><br><span class="line">import android.view.Window;</span><br><span class="line">import android.widget.Button;</span><br><span class="line">import android.widget.EditText;</span><br><span class="line">import android.widget.TextView;</span><br><span class="line">import android.widget.Toast;</span><br><span class="line"></span><br><span class="line">public class MainActivity extends Activity &#123;</span><br><span class="line"></span><br><span class="line">	public static final int MSG_RECEIVED_CODE = 1;</span><br><span class="line"></span><br><span class="line">	private SmsObserver mSmsObserver;</span><br><span class="line">	private Handler mHandler;</span><br><span class="line"></span><br><span class="line">	private EditText metPhone;</span><br><span class="line">	private TextView mtvCode;</span><br><span class="line">	private Button mbtnButton;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">		super.onCreate(savedInstanceState);</span><br><span class="line">		requestWindowFeature(Window.FEATURE_NO_TITLE);</span><br><span class="line">		setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">		metPhone = (EditText) findViewById(R.id.phone);</span><br><span class="line">		mbtnButton = (Button) findViewById(R.id.btn);</span><br><span class="line">		mtvCode = (TextView) findViewById(R.id.code);</span><br><span class="line"></span><br><span class="line">		/**</span><br><span class="line">		 * 设置手机号，拦截固定的手机号</span><br><span class="line">		 */</span><br><span class="line"></span><br><span class="line">		mbtnButton.setOnClickListener(new OnClickListener() &#123;</span><br><span class="line"></span><br><span class="line">			@Override</span><br><span class="line">			public void onClick(View arg0) &#123;</span><br><span class="line">				// TODO Auto-generated method stub</span><br><span class="line">				mSmsObserver.setTel_phone(metPhone.getText().toString());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		/**</span><br><span class="line">		 * 在子线程中更新UI</span><br><span class="line">		 */</span><br><span class="line">		mHandler = new Handler()&#123;</span><br><span class="line">			@Override</span><br><span class="line">			public void handleMessage(Message msg) &#123;</span><br><span class="line">				// TODO Auto-generated method stub</span><br><span class="line">				super.handleMessage(msg);</span><br><span class="line">				if(msg.what == MSG_RECEIVED_CODE)&#123;</span><br><span class="line">					mtvCode.setText(&quot;四位短信验证码为：&quot;+msg.obj.toString());</span><br><span class="line">					Toast.makeText(getApplicationContext(), msg.obj.toString(), Toast.LENGTH_SHORT).show();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line"></span><br><span class="line">		&lt;span style=&quot;color:#ff0000;&quot;&gt;/**</span><br><span class="line">		 * 实例化ContentObserver,注册短信监听</span><br><span class="line">		 */</span><br><span class="line">		mSmsObserver = new SmsObserver(getApplicationContext(), mHandler);</span><br><span class="line">		Uri  uri = Uri.parse(&quot;content://sms&quot;);</span><br><span class="line">		getContentResolver().registerContentObserver(uri, true, mSmsObserver);&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * 由于 ContentObserver 的生命周期不同步于 Activity 和 Service ，</span><br><span class="line">	 * 因此需要手动取消注册</span><br><span class="line">	 * </span><br><span class="line">	 */</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void onDestroy() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		super.onDestroy();</span><br><span class="line">		&lt;span style=&quot;color:#ff0000;&quot;&gt;getContentResolver().unregisterContentObserver(mSmsObserver);&lt;/span&gt;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3、注意在配置文件中添加读取短信的权限："><a href="#3、注意在配置文件中添加读取短信的权限：" class="headerlink" title="3、注意在配置文件中添加读取短信的权限："></a>3、注意在配置文件中添加读取短信的权限：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:name=&quot;android.permission.READ_SMS&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="1、继承ContentObserver，重写onChange方法"><a href="#1、继承ContentObserver，重写onChange方法" class="headerlink" title="1、继承ContentObserver，重写onChange方法"></a>1、继承ContentObserver，重写onChange方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line">package com.tx.testsms;</div><div class="line">/**</div><div class="line"> * 自动读取短信验证码</div><div class="line"> */</div><div class="line">import java.util.regex.Matcher;</div><div class="line">import java.util.regex.Pattern;</div><div class="line"></div><div class="line">import android.content.Context;</div><div class="line">import android.database.ContentObserver;</div><div class="line">import android.database.Cursor;</div><div class="line">import android.net.Uri;</div><div class="line">import android.os.Handler;</div><div class="line">import android.util.Log;</div><div class="line"></div><div class="line">public class SmsObserver extends ContentObserver &#123;</div><div class="line"></div><div class="line">	private Context mContext;</div><div class="line">	private Handler mHandler;</div><div class="line">	private String tel_phone = &quot;&quot;;</div><div class="line"></div><div class="line">	private String code;</div><div class="line"></div><div class="line">	public void setTel_phone(String tel_phone) &#123;</div><div class="line">		this.tel_phone = tel_phone;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public SmsObserver(Context mContext, Handler handler) &#123;</div><div class="line">		super(handler);</div><div class="line">		this.mContext = mContext;</div><div class="line">		this.mHandler = handler;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void onChange(boolean selfChange, Uri uri) &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		super.onChange(selfChange, uri);</div><div class="line"></div><div class="line">		if(uri.toString().equals(&quot;content:://sms//raw&quot;))&#123;</div><div class="line">			return;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		Uri inboxUri = Uri.parse(&quot;content://sms//inbox&quot;);</div><div class="line"></div><div class="line">		Cursor cursor = mContext.getContentResolver().</div><div class="line">				query(inboxUri, null, null, null, &quot;date desc&quot;);</div><div class="line"></div><div class="line">		if(cursor!=null)&#123;</div><div class="line">			if(cursor.moveToFirst())&#123;</div><div class="line">				String address = cursor.getString(cursor.getColumnIndex(&quot;address&quot;));</div><div class="line">				Log.i(&quot;test&quot;, &quot;短信验证码为：--------&quot;+address);</div><div class="line"></div><div class="line">				String body = cursor.getString(cursor.getColumnIndex(&quot;body&quot;));</div><div class="line">				Log.i(&quot;test&quot;, &quot;uri---------&quot;+inboxUri);</div><div class="line"></div><div class="line">				if(address.equals(tel_phone))&#123;</div><div class="line"></div><div class="line">					Pattern pattern = Pattern.compile(&quot;(\\d&#123;4&#125;)&quot;);</div><div class="line">					Matcher matcher = pattern.matcher(body);</div><div class="line"></div><div class="line">					if(matcher.find())&#123;</div><div class="line">						code = matcher.group(0);</div><div class="line">						Log.i(&quot;test&quot;, &quot;短信验证码为：--------&quot;+code);</div><div class="line">						mHandler.obtainMessage(</div><div class="line">								MainActivity.MSG_RECEIVED_CODE,code).sendToTarget();</div><div class="line">					&#125;</div><div class="line"></div><div class="line">				&#125;</div><div class="line"></div><div class="line">			&#125;</div><div class="line">			cursor.close();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册"><a href="#2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册" class="headerlink" title="2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册"></a>2、在MainActivity中注册监听，在子线程中更更新显示UI，并复写onDestroy，取消注册</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">package com.tx.testsms;</div><div class="line"></div><div class="line">import android.app.Activity;</div><div class="line">import android.net.Uri;</div><div class="line">import android.os.Bundle;</div><div class="line">import android.os.Handler;</div><div class="line">import android.os.Message;</div><div class="line">import android.view.View;</div><div class="line">import android.view.View.OnClickListener;</div><div class="line">import android.view.Window;</div><div class="line">import android.widget.Button;</div><div class="line">import android.widget.EditText;</div><div class="line">import android.widget.TextView;</div><div class="line">import android.widget.Toast;</div><div class="line"></div><div class="line">public class MainActivity extends Activity &#123;</div><div class="line"></div><div class="line">	public static final int MSG_RECEIVED_CODE = 1;</div><div class="line"></div><div class="line">	private SmsObserver mSmsObserver;</div><div class="line">	private Handler mHandler;</div><div class="line"></div><div class="line">	private EditText metPhone;</div><div class="line">	private TextView mtvCode;</div><div class="line">	private Button mbtnButton;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">		super.onCreate(savedInstanceState);</div><div class="line">		requestWindowFeature(Window.FEATURE_NO_TITLE);</div><div class="line">		setContentView(R.layout.activity_main);</div><div class="line"></div><div class="line">		metPhone = (EditText) findViewById(R.id.phone);</div><div class="line">		mbtnButton = (Button) findViewById(R.id.btn);</div><div class="line">		mtvCode = (TextView) findViewById(R.id.code);</div><div class="line"></div><div class="line">		/**</div><div class="line">		 * 设置手机号，拦截固定的手机号</div><div class="line">		 */</div><div class="line"></div><div class="line">		mbtnButton.setOnClickListener(new OnClickListener() &#123;</div><div class="line"></div><div class="line">			@Override</div><div class="line">			public void onClick(View arg0) &#123;</div><div class="line">				// TODO Auto-generated method stub</div><div class="line">				mSmsObserver.setTel_phone(metPhone.getText().toString());</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line"></div><div class="line">		/**</div><div class="line">		 * 在子线程中更新UI</div><div class="line">		 */</div><div class="line">		mHandler = new Handler()&#123;</div><div class="line">			@Override</div><div class="line">			public void handleMessage(Message msg) &#123;</div><div class="line">				// TODO Auto-generated method stub</div><div class="line">				super.handleMessage(msg);</div><div class="line">				if(msg.what == MSG_RECEIVED_CODE)&#123;</div><div class="line">					mtvCode.setText(&quot;四位短信验证码为：&quot;+msg.obj.toString());</div><div class="line">					Toast.makeText(getApplicationContext(), msg.obj.toString(), Toast.LENGTH_SHORT).show();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line"></div><div class="line">		&lt;span style=&quot;color:#ff0000;&quot;&gt;/**</div><div class="line">		 * 实例化ContentObserver,注册短信监听</div><div class="line">		 */</div><div class="line">		mSmsObserver = new SmsObserver(getApplicationContext(), mHandler);</div><div class="line">		Uri  uri = Uri.parse(&quot;content://sms&quot;);</div><div class="line">		getContentResolver().registerContentObserver(uri, true, mSmsObserver);&lt;/span&gt;</div><div class="line"></div><div class="line">	&#125;</div><div class="line"></div><div class="line">	/**</div><div class="line">	 * 由于 ContentObserver 的生命周期不同步于 Activity 和 Service ，</div><div class="line">	 * 因此需要手动取消注册</div><div class="line">	 * </div><div class="line">	 */</div><div class="line"></div><div class="line">	@Override</div><div class="line">	protected void onDestroy() &#123;</div><div class="line">		// TODO Auto-generated method stub</div><div class="line">		super.onDestroy();</div><div class="line">		&lt;span style=&quot;color:#ff0000;&quot;&gt;getContentResolver().unregisterContentObserver(mSmsObserver);&lt;/span&gt;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3、注意在配置文件中添加读取短信的权限："><a href="#3、注意在配置文件中添加读取短信的权限：" class="headerlink" title="3、注意在配置文件中添加读取短信的权限："></a>3、注意在配置文件中添加读取短信的权限：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.READ_SMS&quot; /&gt;</div></pre></td></tr></table></figure>
 <p><strong>注意：最小sdk为16.</strong></p>
 <h3 id="4、如下运行截图："><a href="#4、如下运行截图：" class="headerlink" title="4、如下运行截图："></a>4、如下运行截图：</h3><p><img src="http://img.blog.csdn.net/20151017130345615?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>控制台打印出的Log：<br><img src="http://img.blog.csdn.net/20151017130527628?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
 <p>例子源代码：<a href="http://download.csdn.net/detail/txadf/9188791" target="_blank" rel="external">http://download.csdn.net/detail/txadf/9188791</a></p>
 
+                
+<p class="pink-link-context">
+    <a href="/2016/04/23/open-other-app/" rel="next" title="android 打开其他应用">
+    上一篇：android 打开其他应用
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2016/04/23/android-sqlite-notebook/" rel="next" title="android SQLite学习手册">
+    下一篇：android SQLite学习手册
+  </a>
+</p>
+
+
             </div>
+			
         </div>
     </div>
 </article>
@@ -373,7 +451,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="social-group col m3 s12">
+            <div class="social-group col m4 s12">
                 <h5 class="white-text">社交</h5>
                 
                     <a class="social-link" href="https://github.com/imtianx" target="_blank">
@@ -384,26 +462,41 @@
                         <i class="fa fa-2x fa-weibo"></i>
                     </a>
                 
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
             </div>
             
 
             
-            <div class="col m9 s12">
+            <div class="col m8 s12">
                 <h5 class="white-text">友情链接</h5>
                 
                     <a class="social-link" href="http://androidweekly.cn/" target="_blank">android开发技术周报</a>
+                
+                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                
+                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
                 
                     <a class="social-link" href="http://androidcat.com/" target="_blank">androidcat</a>
                 
                     <a class="social-link" href="http://www.jianshu.com/" target="_blank">简书</a>
                 
-                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
-                
                     <a class="social-link" href="http://www.csdn.net/" target="_blank">CSDN</a>
                 
                     <a class="social-link" href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
                 
-                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                    <a class="social-link" href="http://t.cn/Rij9p4Y" target="_blank">翻墙SSBetter</a>
+                
+                    <a class="social-link" href="http://blog.kictto.tech/" target="_blank">Kictto</a>
                 
             </div>
             
@@ -413,7 +506,7 @@
 
     <div class="footer-copyright pink-link-context">
         <div class="container">
-            © 2016-2017  imtianx.cn, All rights reserved.
+            © 2016-2017  imtianx.cn,  鄂ICP备17001358号-1
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
@@ -432,6 +525,8 @@
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
 <script>
     (function($) {
@@ -473,6 +568,22 @@
 
             // 文章目录
             $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
             // 修正文章目录的left-border颜色
             var color = $('.table-of-contents-text').css('color');
             $('.table-of-contents-link').css('border-left-color', color);

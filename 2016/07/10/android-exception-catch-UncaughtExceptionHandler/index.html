@@ -7,23 +7,23 @@
 
     
 
-    <title>android 异常捕获-UncaughtExceptionHandler | Imtianx `s Blog</title>
+    <title>android 异常捕获-UncaughtExceptionHandler | hequnsky `s Blog</title>
     <meta name="author" content="imtianx">
     
-    <meta name="description" content="在android开发中，异常信息的捕获有多种方式，比如第三方的友盟、蒲公英等，这里主要使用 android 原生的 Thread.UncaughtExceptionHandler 来捕获出现的异常信息">
+    <meta name="description" content="hequnsky的个人技术博客">
     
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta property="og:title" content="android 异常捕获-UncaughtExceptionHandler"/>
-    <meta property="og:site_name" content="Imtianx `s Blog"/>
+    <meta property="og:site_name" content="hequnsky `s Blog"/>
 
     
     <meta property="og:image" content="undefined"/>
     
 
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="alternate" href="/atom.xml" title="Imtianx `s Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="hequnsky `s Blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/lib/materialize.min.css">
     <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -44,7 +44,7 @@
             <i class="fa fa-navicon"></i>
         </a>
         <div class="">
-            <a href="/" class="brand-logo hide-on-med-and-down">Imtianx `s Blog</a>
+            <a href="/" class="brand-logo hide-on-med-and-down">hequnsky `s Blog</a>
             <ul class="right hide-on-med-and-down">
                 
                     <li>
@@ -172,7 +172,7 @@
 
             <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/android/">
-                    android <span class="right">28 篇</span></a>
+                    android <span class="right">37 篇</span></a>
                 </a>
             </li>
 
@@ -180,7 +180,7 @@
 
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/android/学习笔记/">
-                    学习笔记 <span class="right">24 篇</span></a>
+                    学习笔记 <span class="right">33 篇</span></a>
                 </a>
             </li>
 
@@ -211,6 +211,30 @@
         
 
             <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/后端/">
+                    后端 <span class="right">3 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/linux/">
+                    linux <span class="right">2 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/后端/域名配置/">
+                    域名配置 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
                 <a class="no-padding" href="/categories/工具软件/">
                     工具软件 <span class="right">3 篇</span></a>
                 </a>
@@ -229,6 +253,38 @@
             <li class="collapse-level-1" collapse-level="1">
                 <a class="no-padding" href="/categories/工具软件/PL-SQL/">
                     PL-SQL <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/java/">
+                    java <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/基础知识/">
+                    基础知识 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/java/高级知识/">
+                    高级知识 <span class="right">7 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/面试/">
+                    面试 <span class="right">2 篇</span></a>
                 </a>
             </li>
 
@@ -286,7 +342,12 @@
 
 
             </div>
-            <time class="pink-link-context" datetime="2016-07-10T08:06:25.000Z"><a href="/2016/07/10/android-exception-catch-UncaughtExceptionHandler/">2016-07-10</a></time>
+            <time class="pink-link-context" datetime="2016-07-10T16:06:25.000Z"><a href="/2016/07/10/android-exception-catch-UncaughtExceptionHandler/">2016-07-10</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
 
             
     <div class="tags-row">
@@ -306,14 +367,31 @@
             <div class="entry pink-link-context">
                 <p>在android开发中，异常信息的捕获有多种方式，比如第三方的友盟、蒲公英等，这里主要使用 android 原生的 Thread.UncaughtExceptionHandler 来捕获出现的异常信息<a id="more"></a>,并给出友好的提示，避免出现停止运行，提高用户体验，下面是具体的实现过程。</p>
 <p><a href="http://blog.csdn.net/zly921112/article/details/51867079" target="_blank" rel="external">转自： Android 全局异常捕获</a></p>
-<h2 id="1-定义自己的异常处理类"><a href="#1-定义自己的异常处理类" class="headerlink" title="1.定义自己的异常处理类"></a>1.定义自己的异常处理类</h2><p>  新建类 <em>CrashHandler</em> 实现 <em>Thread.UncaughtExceptionHandler</em>接口，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class CrashHandler implements Thread.UncaughtExceptionHandler &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void uncaughtException(Thread thread, Throwable ex) &#123;</span><br><span class="line">    //回调函数，处理异常出现后的情况</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="2-设置该异常类为系统默认的"><a href="#2-设置该异常类为系统默认的" class="headerlink" title="2.设置该异常类为系统默认的"></a>2.设置该异常类为系统默认的</h2><p>将上面定义的异常处理类设置为系统默认的异常处理类，当出现异常时，有该类处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.setDefaultUncaughtExceptionHandler(crashHandler);</span><br></pre></td></tr></table></figure></p>
-<h2 id="3-具体的实现"><a href="#3-具体的实现" class="headerlink" title="3.具体的实现"></a>3.具体的实现</h2><p>为了方便查看和修复异常，这里将出现异常的手机信息和异常信息保存在文件，以便传给服务器，具体实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br></pre></td><td class="code"><pre><span class="line">import android.content.Context;</span><br><span class="line">import android.content.pm.PackageInfo;</span><br><span class="line">import android.content.pm.PackageManager;</span><br><span class="line">import android.os.Build;</span><br><span class="line">import android.os.Environment;</span><br><span class="line">import android.os.Looper;</span><br><span class="line">import android.util.Log;</span><br><span class="line">import android.widget.Toast;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.PrintWriter;</span><br><span class="line">import java.io.StringWriter;</span><br><span class="line">import java.io.Writer;</span><br><span class="line">import java.lang.reflect.Field;</span><br><span class="line">import java.text.SimpleDateFormat;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.HashMap;</span><br><span class="line">import java.util.Map;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 异常管理类</span><br><span class="line"> * &lt;p/&gt;</span><br><span class="line"> * Created by imtianx on 2016-7-10.</span><br><span class="line"> */</span><br><span class="line">public class CrashHandler implements Thread.UncaughtExceptionHandler &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 系统默认UncaughtExceptionHandler</span><br><span class="line">     */</span><br><span class="line">    private Thread.UncaughtExceptionHandler mDefaultHandler;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * context</span><br><span class="line">     */</span><br><span class="line">    private Context mContext;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 存储异常和参数信息</span><br><span class="line">     */</span><br><span class="line">    private Map&lt;String, String&gt; paramsMap = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 格式化时间</span><br><span class="line">     */</span><br><span class="line">    private SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd-HH-mm-ss&quot;);</span><br><span class="line"></span><br><span class="line">    private String TAG = this.getClass().getSimpleName();</span><br><span class="line"></span><br><span class="line">    private static CrashHandler mInstance;</span><br><span class="line"></span><br><span class="line">    private CrashHandler() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取CrashHandler实例</span><br><span class="line">     */</span><br><span class="line">    public static synchronized CrashHandler getInstance() &#123;</span><br><span class="line">        if (null == mInstance) &#123;</span><br><span class="line">            mInstance = new CrashHandler();</span><br><span class="line">        &#125;</span><br><span class="line">        return mInstance;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void init(Context context) &#123;</span><br><span class="line">        mContext = context;</span><br><span class="line">        mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();</span><br><span class="line">        //设置该CrashHandler为系统默认的</span><br><span class="line">        Thread.setDefaultUncaughtExceptionHandler(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * uncaughtException 回调函数</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void uncaughtException(Thread thread, Throwable ex) &#123;</span><br><span class="line">        if (!handleException(ex) &amp;&amp; mDefaultHandler != null) &#123;</span><br><span class="line">            //如果自己没处理交给系统处理</span><br><span class="line">            mDefaultHandler.uncaughtException(thread, ex);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //自己处理</span><br><span class="line">            try &#123;//延迟3秒杀进程</span><br><span class="line">                Thread.sleep(2000);</span><br><span class="line">            &#125; catch (InterruptedException e) &#123;</span><br><span class="line">                Log.e(TAG, &quot;error : &quot;, e);</span><br><span class="line">            &#125;</span><br><span class="line">            //退出程序</span><br><span class="line">            AppManager.getAppManager().AppExit(mContext);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 收集错误信息.发送到服务器</span><br><span class="line">     *</span><br><span class="line">     * @return 处理了该异常返回true, 否则false</span><br><span class="line">     */</span><br><span class="line">    private boolean handleException(Throwable ex) &#123;</span><br><span class="line">        if (ex == null) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        //收集设备参数信息</span><br><span class="line">        collectDeviceInfo(mContext);</span><br><span class="line">        //添加自定义信息</span><br><span class="line">        addCustomInfo();</span><br><span class="line">        //使用Toast来显示异常信息</span><br><span class="line">        new Thread() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                Looper.prepare();</span><br><span class="line">                //在此处处理出现异常的情况</span><br><span class="line">                Toast.makeText(mContext, &quot;程序开小差了呢..&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">                Looper.loop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;.start();</span><br><span class="line">        //保存日志文件</span><br><span class="line">        saveCrashInfo2File(ex);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 收集设备参数信息</span><br><span class="line">     *</span><br><span class="line">     * @param ctx</span><br><span class="line">     */</span><br><span class="line">    public void collectDeviceInfo(Context ctx) &#123;</span><br><span class="line">        //获取versionName,versionCode</span><br><span class="line">        try &#123;</span><br><span class="line">            PackageManager pm = ctx.getPackageManager();</span><br><span class="line">            PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), PackageManager.GET_ACTIVITIES);</span><br><span class="line">            if (pi != null) &#123;</span><br><span class="line">                String versionName = pi.versionName == null ? &quot;null&quot; : pi.versionName;</span><br><span class="line">                String versionCode = pi.versionCode + &quot;&quot;;</span><br><span class="line">                paramsMap.put(&quot;versionName&quot;, versionName);</span><br><span class="line">                paramsMap.put(&quot;versionCode&quot;, versionCode);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; catch (PackageManager.NameNotFoundException e) &#123;</span><br><span class="line">            Log.e(TAG, &quot;an error occured when collect package info&quot;, e);</span><br><span class="line">        &#125;</span><br><span class="line">        //获取所有系统信息</span><br><span class="line">        Field[] fields = Build.class.getDeclaredFields();</span><br><span class="line">        for (Field field : fields) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                field.setAccessible(true);</span><br><span class="line">                paramsMap.put(field.getName(), field.get(null).toString());</span><br><span class="line">            &#125; catch (Exception e) &#123;</span><br><span class="line">                Log.e(TAG, &quot;an error occured when collect crash info&quot;, e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 添加自定义参数</span><br><span class="line">     */</span><br><span class="line">    private void addCustomInfo() &#123;</span><br><span class="line">        Log.i(TAG, &quot;addCustomInfo: 程序出错了...&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 保存错误信息到文件中</span><br><span class="line">     *</span><br><span class="line">     * @param ex</span><br><span class="line">     * @return 返回文件名称, 便于将文件传送到服务器</span><br><span class="line">     */</span><br><span class="line">    private String saveCrashInfo2File(Throwable ex) &#123;</span><br><span class="line"></span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line">        for (Map.Entry&lt;String, String&gt; entry : paramsMap.entrySet()) &#123;</span><br><span class="line">            String key = entry.getKey();</span><br><span class="line">            String value = entry.getValue();</span><br><span class="line">            sb.append(key + &quot;=&quot; + value + &quot;\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Writer writer = new StringWriter();</span><br><span class="line">        PrintWriter printWriter = new PrintWriter(writer);</span><br><span class="line">        ex.printStackTrace(printWriter);</span><br><span class="line">        Throwable cause = ex.getCause();</span><br><span class="line">        while (cause != null) &#123;</span><br><span class="line">            cause.printStackTrace(printWriter);</span><br><span class="line">            cause = cause.getCause();</span><br><span class="line">        &#125;</span><br><span class="line">        printWriter.close();</span><br><span class="line">        String result = writer.toString();</span><br><span class="line">        sb.append(result);</span><br><span class="line">        try &#123;</span><br><span class="line">            long timestamp = System.currentTimeMillis();</span><br><span class="line">            String time = format.format(new Date());</span><br><span class="line">            String fileName = &quot;crash-&quot; + time + &quot;-&quot; + timestamp + &quot;.log&quot;;</span><br><span class="line">            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) &#123;</span><br><span class="line">                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/crash/&quot;;</span><br><span class="line">                File dir = new File(path);</span><br><span class="line">                if (!dir.exists()) &#123;</span><br><span class="line">                    dir.mkdirs();</span><br><span class="line">                &#125;</span><br><span class="line">                FileOutputStream fos = new FileOutputStream(path + fileName);</span><br><span class="line">                fos.write(sb.toString().getBytes());</span><br><span class="line">                Log.i(TAG, &quot;saveCrashInfo2File: &quot;+sb.toString());</span><br><span class="line">                fos.close();</span><br><span class="line">            &#125;</span><br><span class="line">            return fileName;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            Log.e(TAG, &quot;an error occured while writing file...&quot;, e);</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="1-定义自己的异常处理类"><a href="#1-定义自己的异常处理类" class="headerlink" title="1.定义自己的异常处理类"></a>1.定义自己的异常处理类</h2><p>  新建类 <em>CrashHandler</em> 实现 <em>Thread.UncaughtExceptionHandler</em>接口，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class CrashHandler implements Thread.UncaughtExceptionHandler &#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void uncaughtException(Thread thread, Throwable ex) &#123;</div><div class="line">    //回调函数，处理异常出现后的情况</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2-设置该异常类为系统默认的"><a href="#2-设置该异常类为系统默认的" class="headerlink" title="2.设置该异常类为系统默认的"></a>2.设置该异常类为系统默认的</h2><p>将上面定义的异常处理类设置为系统默认的异常处理类，当出现异常时，有该类处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Thread.setDefaultUncaughtExceptionHandler(crashHandler);</div></pre></td></tr></table></figure></p>
+<h2 id="3-具体的实现"><a href="#3-具体的实现" class="headerlink" title="3.具体的实现"></a>3.具体的实现</h2><p>为了方便查看和修复异常，这里将出现异常的手机信息和异常信息保存在文件，以便传给服务器，具体实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div></pre></td><td class="code"><pre><div class="line">import android.content.Context;</div><div class="line">import android.content.pm.PackageInfo;</div><div class="line">import android.content.pm.PackageManager;</div><div class="line">import android.os.Build;</div><div class="line">import android.os.Environment;</div><div class="line">import android.os.Looper;</div><div class="line">import android.util.Log;</div><div class="line">import android.widget.Toast;</div><div class="line"></div><div class="line">import java.io.File;</div><div class="line">import java.io.FileOutputStream;</div><div class="line">import java.io.PrintWriter;</div><div class="line">import java.io.StringWriter;</div><div class="line">import java.io.Writer;</div><div class="line">import java.lang.reflect.Field;</div><div class="line">import java.text.SimpleDateFormat;</div><div class="line">import java.util.Date;</div><div class="line">import java.util.HashMap;</div><div class="line">import java.util.Map;</div><div class="line"></div><div class="line">/**</div><div class="line"> * 异常管理类</div><div class="line"> * &lt;p/&gt;</div><div class="line"> * Created by imtianx on 2016-7-10.</div><div class="line"> */</div><div class="line">public class CrashHandler implements Thread.UncaughtExceptionHandler &#123;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 系统默认UncaughtExceptionHandler</div><div class="line">     */</div><div class="line">    private Thread.UncaughtExceptionHandler mDefaultHandler;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * context</div><div class="line">     */</div><div class="line">    private Context mContext;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 存储异常和参数信息</div><div class="line">     */</div><div class="line">    private Map&lt;String, String&gt; paramsMap = new HashMap&lt;&gt;();</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 格式化时间</div><div class="line">     */</div><div class="line">    private SimpleDateFormat format = new SimpleDateFormat(&quot;yyyy-MM-dd-HH-mm-ss&quot;);</div><div class="line"></div><div class="line">    private String TAG = this.getClass().getSimpleName();</div><div class="line"></div><div class="line">    private static CrashHandler mInstance;</div><div class="line"></div><div class="line">    private CrashHandler() &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 获取CrashHandler实例</div><div class="line">     */</div><div class="line">    public static synchronized CrashHandler getInstance() &#123;</div><div class="line">        if (null == mInstance) &#123;</div><div class="line">            mInstance = new CrashHandler();</div><div class="line">        &#125;</div><div class="line">        return mInstance;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void init(Context context) &#123;</div><div class="line">        mContext = context;</div><div class="line">        mDefaultHandler = Thread.getDefaultUncaughtExceptionHandler();</div><div class="line">        //设置该CrashHandler为系统默认的</div><div class="line">        Thread.setDefaultUncaughtExceptionHandler(this);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * uncaughtException 回调函数</div><div class="line">     */</div><div class="line">    @Override</div><div class="line">    public void uncaughtException(Thread thread, Throwable ex) &#123;</div><div class="line">        if (!handleException(ex) &amp;&amp; mDefaultHandler != null) &#123;</div><div class="line">            //如果自己没处理交给系统处理</div><div class="line">            mDefaultHandler.uncaughtException(thread, ex);</div><div class="line">        &#125; else &#123;</div><div class="line">            //自己处理</div><div class="line">            try &#123;//延迟3秒杀进程</div><div class="line">                Thread.sleep(2000);</div><div class="line">            &#125; catch (InterruptedException e) &#123;</div><div class="line">                Log.e(TAG, &quot;error : &quot;, e);</div><div class="line">            &#125;</div><div class="line">            //退出程序</div><div class="line">            AppManager.getAppManager().AppExit(mContext);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 收集错误信息.发送到服务器</div><div class="line">     *</div><div class="line">     * @return 处理了该异常返回true, 否则false</div><div class="line">     */</div><div class="line">    private boolean handleException(Throwable ex) &#123;</div><div class="line">        if (ex == null) &#123;</div><div class="line">            return false;</div><div class="line">        &#125;</div><div class="line">        //收集设备参数信息</div><div class="line">        collectDeviceInfo(mContext);</div><div class="line">        //添加自定义信息</div><div class="line">        addCustomInfo();</div><div class="line">        //使用Toast来显示异常信息</div><div class="line">        new Thread() &#123;</div><div class="line">            @Override</div><div class="line">            public void run() &#123;</div><div class="line">                Looper.prepare();</div><div class="line">                //在此处处理出现异常的情况</div><div class="line">                Toast.makeText(mContext, &quot;程序开小差了呢..&quot;, Toast.LENGTH_SHORT).show();</div><div class="line">                Looper.loop();</div><div class="line">            &#125;</div><div class="line">        &#125;.start();</div><div class="line">        //保存日志文件</div><div class="line">        saveCrashInfo2File(ex);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    /**</div><div class="line">     * 收集设备参数信息</div><div class="line">     *</div><div class="line">     * @param ctx</div><div class="line">     */</div><div class="line">    public void collectDeviceInfo(Context ctx) &#123;</div><div class="line">        //获取versionName,versionCode</div><div class="line">        try &#123;</div><div class="line">            PackageManager pm = ctx.getPackageManager();</div><div class="line">            PackageInfo pi = pm.getPackageInfo(ctx.getPackageName(), PackageManager.GET_ACTIVITIES);</div><div class="line">            if (pi != null) &#123;</div><div class="line">                String versionName = pi.versionName == null ? &quot;null&quot; : pi.versionName;</div><div class="line">                String versionCode = pi.versionCode + &quot;&quot;;</div><div class="line">                paramsMap.put(&quot;versionName&quot;, versionName);</div><div class="line">                paramsMap.put(&quot;versionCode&quot;, versionCode);</div><div class="line">            &#125;</div><div class="line">        &#125; catch (PackageManager.NameNotFoundException e) &#123;</div><div class="line">            Log.e(TAG, &quot;an error occured when collect package info&quot;, e);</div><div class="line">        &#125;</div><div class="line">        //获取所有系统信息</div><div class="line">        Field[] fields = Build.class.getDeclaredFields();</div><div class="line">        for (Field field : fields) &#123;</div><div class="line">            try &#123;</div><div class="line">                field.setAccessible(true);</div><div class="line">                paramsMap.put(field.getName(), field.get(null).toString());</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                Log.e(TAG, &quot;an error occured when collect crash info&quot;, e);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 添加自定义参数</div><div class="line">     */</div><div class="line">    private void addCustomInfo() &#123;</div><div class="line">        Log.i(TAG, &quot;addCustomInfo: 程序出错了...&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * 保存错误信息到文件中</div><div class="line">     *</div><div class="line">     * @param ex</div><div class="line">     * @return 返回文件名称, 便于将文件传送到服务器</div><div class="line">     */</div><div class="line">    private String saveCrashInfo2File(Throwable ex) &#123;</div><div class="line"></div><div class="line">        StringBuffer sb = new StringBuffer();</div><div class="line">        for (Map.Entry&lt;String, String&gt; entry : paramsMap.entrySet()) &#123;</div><div class="line">            String key = entry.getKey();</div><div class="line">            String value = entry.getValue();</div><div class="line">            sb.append(key + &quot;=&quot; + value + &quot;\n&quot;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        Writer writer = new StringWriter();</div><div class="line">        PrintWriter printWriter = new PrintWriter(writer);</div><div class="line">        ex.printStackTrace(printWriter);</div><div class="line">        Throwable cause = ex.getCause();</div><div class="line">        while (cause != null) &#123;</div><div class="line">            cause.printStackTrace(printWriter);</div><div class="line">            cause = cause.getCause();</div><div class="line">        &#125;</div><div class="line">        printWriter.close();</div><div class="line">        String result = writer.toString();</div><div class="line">        sb.append(result);</div><div class="line">        try &#123;</div><div class="line">            long timestamp = System.currentTimeMillis();</div><div class="line">            String time = format.format(new Date());</div><div class="line">            String fileName = &quot;crash-&quot; + time + &quot;-&quot; + timestamp + &quot;.log&quot;;</div><div class="line">            if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) &#123;</div><div class="line">                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + &quot;/crash/&quot;;</div><div class="line">                File dir = new File(path);</div><div class="line">                if (!dir.exists()) &#123;</div><div class="line">                    dir.mkdirs();</div><div class="line">                &#125;</div><div class="line">                FileOutputStream fos = new FileOutputStream(path + fileName);</div><div class="line">                fos.write(sb.toString().getBytes());</div><div class="line">                Log.i(TAG, &quot;saveCrashInfo2File: &quot;+sb.toString());</div><div class="line">                fos.close();</div><div class="line">            &#125;</div><div class="line">            return fileName;</div><div class="line">        &#125; catch (Exception e) &#123;</div><div class="line">            Log.e(TAG, &quot;an error occured while writing file...&quot;, e);</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>注：在上述代码中使用了 AppManager类，是常用的activity 管理类 <a href="https://github.com/txadf/Android_Study_Notes/tree/master/android-tools/AppManager.md" target="_blank" rel="external">点此查看</a></p>
-<h2 id="4-实际使用"><a href="#4-实际使用" class="headerlink" title="4.实际使用"></a>4.实际使用</h2><p>在application中初始化，并在配置文件中添加读写权限。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CrashHandler.getInstance().init(this);</span><br></pre></td></tr></table></figure></p>
+<h2 id="4-实际使用"><a href="#4-实际使用" class="headerlink" title="4.实际使用"></a>4.实际使用</h2><p>在application中初始化，并在配置文件中添加读写权限。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CrashHandler.getInstance().init(this);</div></pre></td></tr></table></figure></p>
 <p>到此，全局异常捕获已全部完成。</p>
 
+                
+<p class="pink-link-context">
+    <a href="/2016/09/10/using-DataBinding/" rel="next" title="数据绑定库DataBinding的使用">
+    上一篇：数据绑定库DataBinding的使用
+  </a>
+</p>
+
+
+
+<p class="pink-link-context">
+    <a href="/2016/06/12/android-open-source-connected/" rel="next" title="android 开源库（字体图标，MD控件等）">
+    下一篇：android 开源库（字体图标，MD控件等）
+  </a>
+</p>
+
+
             </div>
+			
         </div>
     </div>
 </article>
@@ -368,7 +446,7 @@
     <div class="container">
         <div class="row">
             
-            <div class="social-group col m3 s12">
+            <div class="social-group col m4 s12">
                 <h5 class="white-text">社交</h5>
                 
                     <a class="social-link" href="https://github.com/imtianx" target="_blank">
@@ -379,26 +457,41 @@
                         <i class="fa fa-2x fa-weibo"></i>
                     </a>
                 
+                <div class="site-visitors-container white-text">
+                    <span>
+                        <i class="fa fa-user"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+                    </span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span>
+                        <i class="fa fa-eye"></i>
+                        <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+                    </span>
+                </div>
             </div>
             
 
             
-            <div class="col m9 s12">
+            <div class="col m8 s12">
                 <h5 class="white-text">友情链接</h5>
                 
                     <a class="social-link" href="http://androidweekly.cn/" target="_blank">android开发技术周报</a>
+                
+                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                
+                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
                 
                     <a class="social-link" href="http://androidcat.com/" target="_blank">androidcat</a>
                 
                     <a class="social-link" href="http://www.jianshu.com/" target="_blank">简书</a>
                 
-                    <a class="social-link" href="http://gold.xitu.io/" target="_blank">掘金</a>
-                
                     <a class="social-link" href="http://www.csdn.net/" target="_blank">CSDN</a>
                 
                     <a class="social-link" href="http://www.jcodecraeer.com/" target="_blank">泡在网上的日子</a>
                 
-                    <a class="social-link" href="http://developer.android.com/index.html" target="_blank">android官网</a>
+                    <a class="social-link" href="http://t.cn/Rij9p4Y" target="_blank">翻墙SSBetter</a>
+                
+                    <a class="social-link" href="http://blog.kictto.tech/" target="_blank">Kictto</a>
                 
             </div>
             
@@ -408,7 +501,7 @@
 
     <div class="footer-copyright pink-link-context">
         <div class="container">
-            © 2016-2017  imtianx.cn, All rights reserved.
+            © 2016-2017  imtianx.cn,  鄂ICP备17001358号-1
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
@@ -427,6 +520,8 @@
 
 <script src="/js/jquery.min.js"></script>
 <script src="/js/materialize.min.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
 <script>
     (function($) {
@@ -468,6 +563,22 @@
 
             // 文章目录
             $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
             // 修正文章目录的left-border颜色
             var color = $('.table-of-contents-text').css('color');
             $('.table-of-contents-link').css('border-left-color', color);
