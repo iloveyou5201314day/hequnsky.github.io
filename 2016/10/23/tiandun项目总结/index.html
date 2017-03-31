@@ -390,7 +390,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//获取数据库配置</div><div class="line">private static DbManager mDbManager = x.getDb(SNApplication.getDaoConfig());</div><div class="line">//插入一条</div><div class="line"> mDbManager.save(pickupDbItem);</div><div class="line"> //查找-条</div><div class="line"> pickupDbItem = mDbManager.selector(PickupDbItem.class)</div><div class="line">                        .where(&quot;express_no&quot;, &quot;=&quot;, expressNo)</div><div class="line">                        .findFirst();</div><div class="line">//查找所有</div><div class="line">mDbManager.selector(PickupDbItem.class).findAll();</div><div class="line">//更新三个字段</div><div class="line"> mDbManager.update(pickupDbItem, &quot;sender_idcrad_id&quot;, &quot;pic_bale_before&quot;, &quot;pic_bale_after&quot;, &quot;pic_bale_complete&quot;);</div><div class="line"> //删除</div><div class="line"> mDbManager.delete(pickupDbItem);</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>用法很简单，负责的查询条件可以使用<code>WhereBuilder</code>类来构造。更多的请参见<a href="https://github.com/imtianx/xUtils3/blob/master/sample/src/main/java/org/xutils/sample/DbFragment.java" target="_blank" rel="external">此处</a>。</p>
+<p>用法很简单，负责的查询条件可以使用<code>WhereBuilder</code>类来构造。更多的请参见<a href="https://github.com/hequnsky/xUtils3/blob/master/sample/src/main/java/org/xutils/sample/DbFragment.java" target="_blank" rel="external">此处</a>。</p>
 <ul>
 <li>数据库的升级</li>
 </ul>
@@ -472,11 +472,11 @@
             <div class="social-group col m4 s12">
                 <h5 class="white-text">社交</h5>
                 
-                    <a class="social-link" href="https://github.com/imtianx" target="_blank">
+                    <a class="social-link" href="https://github.com/hequnsky" target="_blank">
                         <i class="fa fa-2x fa-github"></i>
                     </a>
                 
-                    <a class="social-link" href="http://weibo.com/imtianx" target="_blank">
+                    <a class="social-link" href="http://weibo.com/u/5508666345" target="_blank">
                         <i class="fa fa-2x fa-weibo"></i>
                     </a>
                 
@@ -524,7 +524,7 @@
 
     <div class="footer-copyright pink-link-context">
         <div class="container">
-            © 2016-2017  imtianx.cn,  鄂ICP备17001358号-1
+            © 2016-2017  hequnsky.github.io
             <p class="right" style="margin-top: 0;">本博客由 <a href="https://hexo.io">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/raytaylorlin/hexo-theme-raytaylorism">raytaylorism</a></p>
         </div>
     </div>
