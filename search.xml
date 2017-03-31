@@ -97,7 +97,7 @@
 <p>在 Stackoverflow 查了下，发现是google 在 android N 之后，提高了私有文件的安全性，应用私有目录将被限制访问，无法通过  <code>file:// URI 类型的Uri</code> 进行应用间文件共享，必须使用 <code>content:// URI类型的Ur,并授予 URI 临时访问权限。</code></p>
 <p>下面是官方对7.0权限和文件共享的说明：</p>
 <p><img src="http://img.imtianx.cn/android-7.0-permission-file-change.png" alt=""></p>
-<p>具体内容请查看<a href="https://developer.android.google.cn/about/versions/nougat/android-7.0-changes.html#perm" target="_blank" rel="external">  官方说明-7.0行为变更</a>(无需翻墙)</p>
+<p>具体内容请查看<a href="https://developer.android.google.cn/info/versions/nougat/android-7.0-changes.html#perm" target="_blank" rel="external">  官方说明-7.0行为变更</a>(无需翻墙)</p>
 <p>如下是 android N 相机的适配过程：</p>
 <p>一、 <strong>在manifest清单文件中注册provider</strong></p>
 <p> 添加如下代码：</p>
@@ -3304,7 +3304,7 @@ hexo help       全部的命令
     
     <entry>
       <title><![CDATA[关于]]></title>
-      <url>http://imtianx.cn/about/index.html</url>
+      <url>http://imtianx.cn/info/index.html</url>
       <content type="html"><![CDATA[<p>大家好，我是imtianx。欢迎来到我的个人技术博客。</p>
 <p>作为一个搞技术的，不断地学习是必不可少的。然而，不管什么技术，如果学习完不使用，很快就会忘记，所以，及时的做笔记十分重要。在此，搭建自己的个人博客，记录自己的成长过程。欢迎与我交流哦！<br><strong>联系方式</strong>：<br>QQ : <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=764275613&site=qq&menu=yes" alt="点击这里给我发消息">764275613</a><br>email ：<a href="Mailto:imtianx@163.com" target="_blank" rel="external">imtianx@163.com</a> </p>
 ]]></content>
